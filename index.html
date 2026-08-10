@@ -4,7 +4,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <!-- 동적 SEO 메타 태그 (요청하신 타이틀 스타일 반영) -->
+  <!-- 🌟 네이버 및 구글 서치콘솔 사이트 소유 확인 메타 태그 -->
+  <meta name="naver-site-verification" content="cc3d22a0a02978e64bc81a04a4e0ead2d14b87b0" />
+  <meta name="google-site-verification" content="Ue277DSb_h0qngELVyMSTYsqEaBfIr0N6i8IMfr4NtA" />
+
+  <!-- 동적 SEO 메타 태그 (자바스크립트에 의해 동적으로 변경됩니다) -->
   <title id="seo-title">서울출장마사지 건마몽 - 서울 인천 수원 부천 안산 전지역</title>
   <meta id="seo-description" name="description" content="서울출장마사지 건마몽은 서울, 인천, 수원, 부천, 안산 등 전지역 24시간 출장마사지, 출장안마, 출장홈타이 전문 안내 플랫폼입니다.">
   <meta id="seo-keywords" name="keywords" content="서울출장마사지, 건마몽, 인천출장마사지, 수원출장마사지, 부천출장마사지, 안산출장마사지, 출장마사지, 출장안마, 출장홈타이">
@@ -357,10 +361,7 @@
   <section class="gmm-hero">
     <div class="gmm-container">
       <span class="gmm-eyebrow" id="hero-eyebrow">24시간 출장마사지 전문</span>
-      
-      <!-- 🌟 요청하신 메인 타이틀 변경 반영 -->
       <h1 id="hero-title">서울출장마사지 건마몽 -<br>서울 인천 수원 부천 안산 전지역</h1>
-      
       <p id="hero-desc">엄선된 프리미엄 출장마사지 제휴 업체의 코스와 요금을 확인하시고 바로 전화/문자로 편하게 예약해 보세요.</p>
     </div>
   </section>
@@ -651,7 +652,7 @@
     renderShops(currentRegion, currentDistrict, currentDong, shopContainer);
   }
 
-  // 🌟 SEO 메타 태그 & 메인 타이틀 업데이트 함수
+  // SEO 메타 태그 & 메인 타이틀 업데이트 함수
   function updateSEOAndHeadings(regKey, distKey, dongName) {
     const bText = document.getElementById('breadcrumb-text');
     const heroEyebrow = document.getElementById('hero-eyebrow');
@@ -663,7 +664,6 @@
     const seoKeys = document.getElementById('seo-keywords');
 
     if (regKey === 'all' || !regKey) {
-      // 💡 메인 타이틀 요청 스타일 적용
       const defaultTitle = "서울출장마사지 건마몽 - 서울 인천 수원 부천 안산 전지역";
       const defaultDesc = "서울출장마사지 건마몽은 서울, 인천, 수원, 부천, 안산 등 전지역 24시간 출장마사지, 출장안마, 출장홈타이 전문 안내 플랫폼입니다.";
       const defaultKeys = "서울출장마사지, 건마몽, 인천출장마사지, 수원출장마사지, 부천출장마사지, 안산출장마사지, 출장마사지, 출장안마, 출장홈타이";
