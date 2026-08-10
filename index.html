@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- 동적 SEO 메타 태그 (요청하신 타이틀 스타일 반영) -->
+  <title id="seo-title">서울출장마사지 건마몽 - 서울 인천 수원 부천 안산 전지역</title>
+  <meta id="seo-description" name="description" content="서울출장마사지 건마몽은 서울, 인천, 수원, 부천, 안산 등 전지역 24시간 출장마사지, 출장안마, 출장홈타이 전문 안내 플랫폼입니다.">
+  <meta id="seo-keywords" name="keywords" content="서울출장마사지, 건마몽, 인천출장마사지, 수원출장마사지, 부천출장마사지, 안산출장마사지, 출장마사지, 출장안마, 출장홈타이">
+
+  <style>
+    /* Reset & Base */
+    #gunmamong-page, #gunmamong-page * {
+      box-sizing: border-box !important;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Apple SD Gothic Neo", "Malgun Gothic", "Noto Sans KR", sans-serif !important;
+    }
+    #gunmamong-page {
+      width: 100% !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      color: #273142 !important;
+      background: #f7f3ea !important;
+      overflow: hidden !important;
+    }
+    #gunmamong-page a { text-decoration: none !important; }
+
+    .gmm-container {
+      width: 100% !important;
+      max-width: 1180px !important;
+      margin: 0 auto !important;
+      padding: 0 20px !important;
+    }
+    .gmm-eyebrow {
+      display: inline-flex !important;
+      align-items: center !important;
+      gap: 8px !important;
+      padding: 8px 14px !important;
+      border-radius: 999px !important;
+      background: rgba(31, 72, 109, 0.09) !important;
+      color: #1f486d !important;
+      font-size: 13px !important;
+      font-weight: 800 !important;
+    }
+    .gmm-eyebrow::before {
+      content: "" !important;
+      width: 7px !important;
+      height: 7px !important;
+      border-radius: 50% !important;
+      background: #d8a85f !important;
+      box-shadow: 0 0 0 5px rgba(216, 168, 95, 0.18) !important;
+    }
+    .gmm-section-title {
+      margin: 16px 0 0 !important;
+      font-size: clamp(26px, 3.8vw, 40px) !important;
+      line-height: 1.25 !important;
+      font-weight: 900 !important;
+      color: #172236 !important;
+      word-break: keep-all !important;
+    }
+
+    /* Navigation Bar */
+    .gmm-nav-bar {
+      background: #1f486d !important;
+      color: #fff !important;
+      padding: 14px 0 !important;
+      border-bottom: 1px solid rgba(0,0,0,0.1) !important;
+    }
+    .gmm-nav-content {
+      display: flex !important;
+      justify-content: space-between !important;
+      align-items: center !important;
+      flex-wrap: wrap !important;
+      gap: 10px !important;
+    }
+    .gmm-logo-text { font-size: 20px !important; font-weight: 950 !important; color: #FFE921 !important; }
+    .gmm-breadcrumb { font-size: 14px !important; font-weight: 700 !important; color: rgba(255,255,255,0.9) !important; }
+    .gmm-home-btn {
+      background: rgba(255,255,255,0.15) !important;
+      color: #fff !important;
+      padding: 6px 14px !important;
+      border-radius: 8px !important;
+      font-size: 13px !important;
+      font-weight: 800 !important;
+      cursor: pointer !important;
+      border: none !important;
+    }
+    .gmm-home-btn:hover { background: rgba(255,255,255,0.3) !important; }
+
+    /* Hero Section */
+    .gmm-hero {
+      padding: 40px 0 20px !important;
+      background: linear-gradient(135deg, rgba(255,255,255,0.85), rgba(247,243,234,0.85)), linear-gradient(135deg, #f7f3ea, #fffaf2) !important;
+      text-align: center !important;
+    }
+    .gmm-hero h1 {
+      margin: 12px 0 0 !important;
+      font-size: clamp(24px, 3.6vw, 38px) !important;
+      line-height: 1.3 !important;
+      font-weight: 950 !important;
+      color: #172236 !important;
+      word-break: keep-all !important;
+    }
+    .gmm-hero p { margin-top: 10px !important; color: #596579 !important; font-size: 15px !important; }
+
+    /* Main Banner */
+    .gmm-banner-section {
+      padding: 20px 0 10px !important;
+    }
+    .gmm-main-banner-img {
+      width: 100% !important;
+      max-height: 380px !important;
+      object-fit: cover !important;
+      border-radius: 20px !important;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08) !important;
+      border: 1px solid rgba(0,0,0,0.05) !important;
+      display: block !important;
+    }
+
+    /* Shop List Section */
+    .gmm-shop-section {
+      padding: 30px 0 50px !important;
+      background: #f1ecdf !important;
+    }
+    .gmm-shop-list {
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 20px !important;
+      margin-top: 20px !important;
+    }
+    .gmm-shop-card {
+      background: #fff !important;
+      border-radius: 24px !important;
+      padding: 24px !important;
+      border: 1px solid rgba(31, 72, 109, 0.12) !important;
+      box-shadow: 0 14px 32px rgba(31, 72, 109, 0.06) !important;
+      display: flex !important;
+      align-items: center !important;
+      gap: 24px !important;
+    }
+    .gmm-shop-img {
+      width: 170px !important;
+      height: 170px !important;
+      min-width: 170px !important;
+      border-radius: 16px !important;
+      object-fit: cover !important;
+      border: 1px solid rgba(0,0,0,0.06) !important;
+    }
+    .gmm-shop-info { flex: 1 !important; }
+    .gmm-shop-header {
+      display: flex !important;
+      align-items: center !important;
+      gap: 8px !important;
+      margin-bottom: 8px !important;
+      flex-wrap: wrap !important;
+    }
+    .gmm-shop-badge {
+      display: inline-block !important;
+      padding: 4px 10px !important;
+      border-radius: 6px !important;
+      background: #d8a85f !important;
+      color: #172236 !important;
+      font-size: 12px !important;
+      font-weight: 850 !important;
+    }
+    .gmm-shop-location {
+      font-size: 13px !important;
+      color: #1f486d !important;
+      font-weight: 700 !important;
+      background: rgba(31, 72, 109, 0.08) !important;
+      padding: 4px 10px !important;
+      border-radius: 6px !important;
+    }
+    .gmm-shop-name {
+      font-size: 22px !important;
+      font-weight: 950 !important;
+      color: #172236 !important;
+      margin: 4px 0 !important;
+    }
+    .gmm-shop-desc {
+      color: #596579 !important;
+      font-size: 14.5px !important;
+      margin: 0 0 12px 0 !important;
+      line-height: 1.5 !important;
+    }
+
+    /* Course Box */
+    .gmm-courses-box {
+      background: #f8f6f0 !important;
+      border-radius: 12px !important;
+      padding: 10px 14px !important;
+    }
+    .gmm-course-item {
+      display: flex !important;
+      justify-content: space-between !important;
+      align-items: center !important;
+      font-size: 13.5px !important;
+      padding: 4px 0 !important;
+      border-bottom: 1px dashed rgba(0,0,0,0.08) !important;
+    }
+    .gmm-course-item:last-child { border-bottom: none !important; }
+    .gmm-course-name { color: #273142 !important; font-weight: 700 !important; }
+    .gmm-course-price { color: #1f486d !important; font-weight: 900 !important; }
+
+    /* Actions */
+    .gmm-shop-action {
+      display: flex !important;
+      flex-direction: column !important;
+      justify-content: center !important;
+      align-items: center !important;
+      min-width: 180px !important;
+      border-left: 1px solid rgba(0,0,0,0.06) !important;
+      padding-left: 20px !important;
+      gap: 8px !important;
+    }
+    .gmm-shop-phone-num {
+      font-size: 16px !important;
+      font-weight: 900 !important;
+      color: #172236 !important;
+      margin-bottom: 4px !important;
+    }
+    .gmm-btn-call {
+      background: linear-gradient(135deg, #1f486d, #172236) !important;
+      color: #fff !important;
+      padding: 12px 18px !important;
+      border-radius: 10px !important;
+      font-size: 14px !important;
+      font-weight: 900 !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      width: 100% !important;
+      box-shadow: 0 4px 12px rgba(31, 72, 109, 0.25) !important;
+    }
+    .gmm-btn-sms {
+      background: #FFE921 !important;
+      color: #172236 !important;
+      padding: 11px 18px !important;
+      border-radius: 10px !important;
+      font-size: 14px !important;
+      font-weight: 900 !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      width: 100% !important;
+      border: 1px solid rgba(0,0,0,0.1) !important;
+    }
+
+    /* Region Selector Box */
+    .gmm-region-box {
+      padding: 40px 0 !important;
+      background: #fff !important;
+      border-top: 1px solid rgba(31, 72, 109, 0.08) !important;
+      border-bottom: 1px solid rgba(31, 72, 109, 0.08) !important;
+    }
+    .gmm-tabs {
+      display: flex !important;
+      justify-content: center !important;
+      gap: 10px !important;
+      margin-bottom: 20px !important;
+      flex-wrap: wrap !important;
+    }
+    .gmm-tab {
+      padding: 10px 22px !important;
+      border-radius: 999px !important;
+      background: #f7f3ea !important;
+      color: #1f486d !important;
+      font-weight: 850 !important;
+      font-size: 15px !important;
+      border: 1px solid rgba(31, 72, 109, 0.15) !important;
+      cursor: pointer !important;
+    }
+    .gmm-tab.active {
+      background: #1f486d !important;
+      color: #fff !important;
+      border-color: #1f486d !important;
+    }
+
+    /* Subregion Cards */
+    .gmm-subregion-card {
+      background: #f8f6f0 !important;
+      border-radius: 16px !important;
+      padding: 20px !important;
+      border: 1px solid rgba(31, 72, 109, 0.08) !important;
+      margin-bottom: 16px !important;
+    }
+    .gmm-subregion-title {
+      font-size: 16px !important;
+      font-weight: 900 !important;
+      color: #172236 !important;
+      margin-bottom: 12px !important;
+      display: block !important;
+    }
+    .gmm-links-grid {
+      display: flex !important;
+      flex-wrap: wrap !important;
+      gap: 8px !important;
+    }
+    .gmm-link-item {
+      background: #fff !important;
+      color: #1f486d !important;
+      border: 1px solid rgba(0,0,0,0.08) !important;
+      padding: 8px 14px !important;
+      border-radius: 8px !important;
+      font-size: 13.5px !important;
+      font-weight: 700 !important;
+      cursor: pointer !important;
+      transition: all 0.2s ease !important;
+    }
+    .gmm-link-item:hover, .gmm-link-item.active {
+      background: #1f486d !important;
+      color: #fff !important;
+    }
+
+    /* Q&A Section */
+    .gmm-qna-section { padding: 60px 0 !important; background: #fff !important; }
+    .gmm-qna-list { display: flex !important; flex-direction: column !important; gap: 16px !important; margin-top: 30px !important; }
+    .gmm-qna-item { border: 1px solid rgba(31, 72, 109, 0.12) !important; border-radius: 16px !important; padding: 20px 24px !important; background: #fdfcf9 !important; }
+    .gmm-qna-q { font-size: 17px !important; font-weight: 900 !important; color: #172236 !important; margin-bottom: 8px !important; display: flex !important; align-items: center !important; gap: 10px !important; }
+    .gmm-qna-q-badge { background: #1f486d !important; color: #fff !important; width: 26px !important; height: 26px !important; border-radius: 50% !important; display: inline-flex !important; align-items: center !important; justify-content: center !important; font-size: 14px !important; }
+    .gmm-qna-a { font-size: 14.5px !important; color: #596579 !important; line-height: 1.7 !important; padding-left: 36px !important; margin: 0 !important; }
+
+    /* Footer */
+    .gmm-footer { background: #222 !important; color: #999 !important; padding: 40px 0 !important; text-align: center !important; font-size: 13px !important; line-height: 1.8 !important; }
+
+    /* Responsive */
+    @media(max-width: 768px) {
+      .gmm-shop-card { flex-direction: column !important; align-items: stretch !important; }
+      .gmm-shop-img { width: 100% !important; height: 180px !important; }
+      .gmm-shop-action {
+        border-left: none !important;
+        border-top: 1px dashed rgba(0,0,0,0.1) !important;
+        padding-left: 0 !important;
+        padding-top: 16px !important;
+        min-width: auto !important;
+      }
+      .gmm-qna-a { padding-left: 0 !important; margin-top: 8px !important; }
+    }
+  </style>
+</head>
+<body>
+
+<div id="gunmamong-page">
+
+  <!-- Top Navigation Bar -->
+  <header class="gmm-nav-bar">
+    <div class="gmm-container">
+      <div class="gmm-nav-content">
+        <span class="gmm-logo-text">건마몽</span>
+        <div class="gmm-breadcrumb" id="breadcrumb-text">전체 메인 ➔ 수도권 출장마사지 통합 안내</div>
+        <button class="gmm-home-btn" onclick="navigateTo('all')">🏠 전체 메인으로</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="gmm-hero">
+    <div class="gmm-container">
+      <span class="gmm-eyebrow" id="hero-eyebrow">24시간 출장마사지 전문</span>
+      
+      <!-- 🌟 요청하신 메인 타이틀 변경 반영 -->
+      <h1 id="hero-title">서울출장마사지 건마몽 -<br>서울 인천 수원 부천 안산 전지역</h1>
+      
+      <p id="hero-desc">엄선된 프리미엄 출장마사지 제휴 업체의 코스와 요금을 확인하시고 바로 전화/문자로 편하게 예약해 보세요.</p>
+    </div>
+  </section>
+
+  <!-- 메인 배너 영역 -->
+  <section class="gmm-banner-section">
+    <div class="gmm-container">
+      <img src="images/banner.jpg" alt="건마몽 출장마사지 메인 배너" class="gmm-main-banner-img">
+    </div>
+  </section>
+
+  <!-- Shop List Section -->
+  <section class="gmm-shop-section">
+    <div class="gmm-container">
+      <div style="text-align:center;">
+        <span class="gmm-eyebrow">RECOMMENDED PARTNERS</span>
+        <h2 class="gmm-section-title" id="shop-section-title">건마몽 제휴 출장마사지 업체</h2>
+      </div>
+
+      <!-- 업체 목록 카드 5곳 -->
+      <div class="gmm-shop-list" id="shop-list-container"></div>
+    </div>
+  </section>
+
+  <!-- Region / District / Dong Selection Box -->
+  <section class="gmm-region-box">
+    <div class="gmm-container">
+      <div style="text-align:center; margin-bottom: 20px;">
+        <span class="gmm-eyebrow">LOCATION SEARCH</span>
+        <h2 class="gmm-section-title">원하시는 지역별 출장마사지 전용 페이지 이동</h2>
+      </div>
+
+      <!-- 1차 광역 선택 탭 -->
+      <div class="gmm-tabs">
+        <button class="gmm-tab active" id="tab-all" onclick="navigateTo('all')">전체 메인</button>
+        <button class="gmm-tab" id="tab-seoul" onclick="navigateTo('seoul')">서울특별시</button>
+        <button class="gmm-tab" id="tab-gyeonggi" onclick="navigateTo('gyeonggi')">경기도</button>
+        <button class="gmm-tab" id="tab-incheon" onclick="navigateTo('incheon')">인천광역시</button>
+        <button class="gmm-tab" id="tab-cheonan" onclick="navigateTo('cheonan')">천안시</button>
+      </div>
+
+      <!-- 2차 구/동 세부 선택 영역 -->
+      <div id="subregion-container"></div>
+    </div>
+  </section>
+
+  <!-- Q&A Section -->
+  <section class="gmm-qna-section">
+    <div class="gmm-container">
+      <div style="text-align:center;">
+        <span class="gmm-eyebrow">FREQUENTLY ASKED QUESTIONS</span>
+        <h2 class="gmm-section-title">자주 묻는 질문 (Q&A)</h2>
+      </div>
+
+      <div class="gmm-qna-list">
+        <div class="gmm-qna-item">
+          <div class="gmm-qna-q">
+            <span class="gmm-qna-q-badge">Q1</span>
+            서울, 경기, 인천, 천안 세부 동까지 정말 출장마사지가 가능한가요?
+          </div>
+          <p class="gmm-qna-a">
+            네, 건마몽에 등록된 제휴 업체들은 각 지역 구/동 단위로 테라피스트 관리사가 배치되어 있습니다. 자택, 호텔, 오피스텔 등 어디서나 상세 주소지(동/번지)만 알려주시면 25~30분 내로 신속 방문합니다.
+          </p>
+        </div>
+
+        <div class="gmm-qna-item">
+          <div class="gmm-qna-q">
+            <span class="gmm-qna-q-badge">Q2</span>
+            출장마사지 예약 후 방문까지 시간은 얼마나 걸리며, 영업시간은 어떻게 되나요?
+          </div>
+          <p class="gmm-qna-a">
+            모든 출장마사지 제휴 업체는 24시간 365일 상시 운영됩니다. 예약 완료 후 평균 20~30분 내에 방문드리고 있으며, 출퇴근 시간대나 기상 악화 시 약간의 차이가 있을 수 있으니 전화/문자로 사전 확인을 추천합니다.
+          </p>
+        </div>
+
+        <div class="gmm-qna-item">
+          <div class="gmm-qna-q">
+            <span class="gmm-qna-q-badge">Q3</span>
+            결제 방식과 카카오페이/계좌이체/카드 결제도 가능한가요?
+          </div>
+          <p class="gmm-qna-a">
+            건마몽 출장마사지 제휴 업체는 100% 관리사 현장 도착 후 진행하는 안심 후불제로 운영됩니다. 현금 결제뿐만 아니라 계좌이체 및 사전 문의 시 카드 결제도 편리하게 이용하실 수 있습니다.
+          </p>
+        </div>
+
+        <div class="gmm-qna-item">
+          <div class="gmm-qna-q">
+            <span class="gmm-qna-q-badge">Q4</span>
+            출장마사지 서비스를 위해 고객이 따로 준비해야 할 물품이 있나요?
+          </div>
+          <p class="gmm-qna-a">
+            고객님께서 별도로 준비하실 물품은 전혀 없습니다. 케어에 필요한 최고급 타월, 오일, 소모품 등 모든 전문 장비를 관리사가 직접 지참하여 방문하므로 편안하게 휴식만 취하시면 됩니다.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="gmm-footer">
+    <div class="gmm-container">
+      <p><strong>건마몽 (Gunmamong)</strong> | 서울 · 경기 · 인천 · 천안 구/동별 출장마사지 전문 안내 플랫폼</p>
+      <p>© Gunmamong. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+</div>
+
+<!-- 🌟 자바스크립트: 데이터베이스 및 동적 렌더링 스크립트 -->
+<script>
+  // 1. 서울, 경기, 인천, 천안 데이터베이스
+  const regionData = {
+    seoul: {
+      name: "서울특별시",
+      districts: {
+        gangnam: { name: "강남구", dongs: ["역삼동", "논현동", "삼성동", "청담동", "신사동", "대치동"] },
+        seocho: { name: "서초구", dongs: ["서초동", "반포동", "방배동", "양재동", "잠원동"] },
+        songpa: { name: "송파구", dongs: ["잠실동", "가락동", "문정동", "방이동", "삼전동"] },
+        gangdong: { name: "강동구", dongs: ["천호동", "길동", "둔촌동", "암사동", "성내동"] },
+        mapo: { name: "마포구", dongs: ["서교동(홍대)", "합정동", "공덕동", "상암동"] },
+        yeongdeungpo: { name: "영등포구", dongs: ["여의도동", "영등포동", "당산동", "문래동"] },
+        yongsan: { name: "용산구", dongs: ["한남동", "이태원동", "원효로동", "이촌동"] },
+        seongdong: { name: "성동구", dongs: ["성수동", "옥수동", "왕십리동", "행당동"] },
+        gwangjin: { name: "광진구", dongs: ["자양동", "구의동", "화양동(건대)", "중곡동"] },
+        dongdaemun: { name: "동대문구", dongs: ["장안동", "전농동", "답십리동", "이문동"] },
+        jungnang: { name: "중랑구", dongs: ["면목동", "상봉동", "중화동", "신내동"] },
+        seongbuk: { name: "성북구", dongs: ["길음동", "돈암동", "안암동", "성북동"] },
+        gangbuk: { name: "강북구", dongs: ["수유동", "미아동", "번동"] },
+        dobong: { name: "도봉구", dongs: ["창동", "방학동", "쌍문동"] },
+        nowon: { name: "노원구", dongs: ["상계동", "중계동", "하계동", "공릉동"] },
+        eunpyeong: { name: "은평구", dongs: ["연신내", "불광동", "응암동", "진관동"] },
+        seodaemun: { name: "서대문구", dongs: ["신촌동", "연희동", "홍제동"] },
+        jongno: { name: "종로구", dongs: ["혜화동", "종로동", "평창동"] },
+        junggu: { name: "중구", dongs: ["명동", "을지로동", "신당동"] },
+        gangseo: { name: "강서구", dongs: ["마곡동", "발산동", "화곡동", "등촌동"] },
+        yangcheon: { name: "양천구", dongs: ["목동", "신정동", "신월동"] },
+        guro: { name: "구로구", dongs: ["구로동", "신도림동", "개봉동"] },
+        geumcheon: { name: "금천구", dongs: ["가산동", "독산동", "시흥동"] },
+        gwanak: { name: "관악구", dongs: ["신림동", "봉천동", "남현동"] },
+        dongjak: { name: "동작구", dongs: ["사당동", "상도동", "흑석동", "노량진동"] }
+      }
+    },
+    gyeonggi: {
+      name: "경기도",
+      districts: {
+        suwon: { name: "수원시", dongs: ["인계동", "영통동", "광교동", "매탄동"] },
+        seongnam: { name: "성남시(분당)", dongs: ["분당동", "정자동", "야탑동", "판교동"] },
+        uijeongbu: { name: "의정부시", dongs: ["의정부동", "민락동", "신곡동", "금오동"] },
+        anyang: { name: "안양시", dongs: ["범계동", "평촌동", "안양동", "석수동"] },
+        bucheon: { name: "부천시", dongs: ["중동", "상동", "심곡동", "원미동"] },
+        gwangmyeong: { name: "광명시", dongs: ["철산동", "하안동", "소하동", "광명동"] },
+        pyeongtaek: { name: "평택시", dongs: ["비전동", "동삭동", "서정동", "송탄"] },
+        dongducheon: { name: "동두천시", dongs: ["지행동", "생연동", "보산동"] },
+        ansan: { name: "안산시", dongs: ["고잔동", "중앙동", "선부동", "초지동"] },
+        goyang: { name: "고양시(일산)", dongs: ["장항동", "백석동", "화정동", "삼송동"] },
+        gwacheon: { name: "과천시", dongs: ["중앙동", "원문동", "별양동"] },
+        guri: { name: "구리시", dongs: ["수택동", "인창동", "갈매동"] },
+        namyangju: { name: "남양주시", dongs: ["다산동", "별내동", "평내동", "호평동"] },
+        osan: { name: "오산시", dongs: ["궐동", "원동", "금암동"] },
+        siheung: { name: "시흥시", dongs: ["정왕동", "배곧동", "은행동", "목감동"] },
+        gunpo: { name: "군포시", dongs: ["산본동", "당동", "금정동"] },
+        uiwang: { name: "의왕시", dongs: ["포일동", "내손동", "삼동"] },
+        hanam: { name: "하남시", dongs: ["망월동(미사)", "신장동", "덕풍동"] },
+        yongin: { name: "용인시", dongs: ["풍덕천동(수지)", "죽전동", "기흥동", "역북동"] },
+        paju: { name: "파주시", dongs: ["야당동(운정)", "금촌동", "문산읍"] },
+        icheon: { name: "이천시", dongs: ["창전동", "증포동", "부발읍"] },
+        anseong: { name: "안성시", dongs: ["공도읍", "석정동", "당왕동"] },
+        gimpo: { name: "김포시", dongs: ["구래동", "장기동", "풍무동", "사우동"] },
+        hwaseong: { name: "화성시", dongs: ["청계동(동탄)", "병점동", "향남읍"] },
+        gwangju_gg: { name: "광주시", dongs: ["경안동", "태전동", "오포읍"] },
+        yangju: { name: "양주시", dongs: ["옥정동", "덕정동", "삼숭동"] },
+        pocheon: { name: "포천시", dongs: ["신읍동", "소흘읍", "가산면"] },
+        yeoju: { name: "여주시", dongs: ["홍문동", "교동", "가남읍"] }
+      }
+    },
+    incheon: {
+      name: "인천광역시",
+      districts: {
+        yeonsu: { name: "연수구(송도)", dongs: ["송도동", "동춘동", "연수동"] },
+        bupyeong: { name: "부평구", dongs: ["부평동", "삼산동", "산곡동"] },
+        seogu: { name: "서구(청라)", dongs: ["청라동", "가정동", "검암동"] },
+        namdong: { name: "남동구", dongs: ["구월동", "간석동", "논현동"] }
+      }
+    },
+    cheonan: {
+      name: "천안시",
+      districts: {
+        seobuk: { name: "서북구", dongs: ["두정동", "불당동", "성정동", "쌍용동"] },
+        dongnam: { name: "동남구", dongs: ["신부동", "청당동", "원성동", "봉명동"] }
+      }
+    }
+  };
+
+  // 2. 제휴 업체 5곳
+  const shopsData = [
+    {
+      id: 1,
+      name: "한국미인홈케어",
+      phone: "0507-1280-3288",
+      badge: "추천업체",
+      desc: "24시 정성 가득한 타이 & 아로마 전문 케어 (전지역 30분 내 신속 방문)",
+      img: "images/shop1.jpg",
+      courses: [
+        { name: "아로디시 관리 (60분)", price: "90,000원" },
+        { name: "스웨디시 케어 (60분)", price: "140,000원" }
+      ]
+    },
+    {
+      id: 2,
+      name: "젊은애인홈타이",
+      phone: "0507-1280-3183",
+      badge: "인기폭발",
+      desc: "지친 일상에 편안한 휴식을 선사하는 프리미엄 힐링 수기 케어",
+      img: "images/shop2.jpg",
+      courses: [
+        { name: "건식 코스 (60분)", price: "60,000원" },
+        { name: "스웨디시 (60분)", price: "140,000원" }
+      ]
+    },
+    {
+      id: 3,
+      name: "그녀의온도홈타이",
+      phone: "0507-1280-3245",
+      badge: "24시상시",
+      desc: "빠른 방문과 철저한 위생 관리를 약속드립니다",
+      img: "images/shop3.jpg",
+      courses: [
+        { name: "타이/아로마 (60분)", price: "60,000원" },
+        { name: "한국 스웨디시케어 (60분)", price: "140,000원" }
+      ]
+    },
+    {
+      id: 4,
+      name: "젊은미녀홈타이",
+      phone: "0507-1280-3180",
+      badge: "신규제휴",
+      desc: "베테랑 관리사의 맞춤형 피로 회복 케어 프로그램",
+      img: "images/shop4.jpg",
+      courses: [
+        { name: "타이코스 (60분)", price: "60,000원" },
+        { name: "한국스웨디시 (90분)", price: "140,000원" }
+      ]
+    },
+    {
+      id: 5,
+      name: "지금될까홈타이",
+      phone: "0507-1280-3228",
+      badge: "만족도1위",
+      desc: "후불제 안심 이용, 해당 권역 25분 내 빠른 도착",
+      img: "images/shop5.jpg",
+      courses: [
+        { name: "타이 코스 (60분)", price: "60,000원" },
+        { name: "스웨디시 코스 (60분)", price: "140,000원" }
+      ]
+    }
+  ];
+
+  // 3. URL 네비게이션
+  function navigateTo(targetKey) {
+    let url = window.location.pathname;
+    if (targetKey !== 'all') {
+      url += `?page=${targetKey}`;
+    }
+    history.pushState({ page: targetKey }, '', url);
+    renderPage(targetKey);
+  }
+
+  // 4. 화면 동적 렌더링
+  function renderPage(targetKey) {
+    const subContainer = document.getElementById('subregion-container');
+    const shopContainer = document.getElementById('shop-list-container');
+    
+    let currentRegion = "";
+    let currentDistrict = "";
+    let currentDong = "";
+
+    const parts = targetKey.split('-');
+    if (parts[0]) currentRegion = parts[0];
+    if (parts[1]) currentDistrict = parts[1];
+    if (parts[2]) currentDong = parts[2];
+
+    document.querySelectorAll('.gmm-tab').forEach(tab => tab.classList.remove('active'));
+    const activeTab = document.getElementById('tab-' + currentRegion);
+    if (activeTab) activeTab.classList.add('active');
+
+    updateSEOAndHeadings(currentRegion, currentDistrict, currentDong);
+    renderSubRegionLinks(currentRegion, currentDistrict, currentDong, subContainer);
+    renderShops(currentRegion, currentDistrict, currentDong, shopContainer);
+  }
+
+  // 🌟 SEO 메타 태그 & 메인 타이틀 업데이트 함수
+  function updateSEOAndHeadings(regKey, distKey, dongName) {
+    const bText = document.getElementById('breadcrumb-text');
+    const heroEyebrow = document.getElementById('hero-eyebrow');
+    const heroTitle = document.getElementById('hero-title');
+    const heroDesc = document.getElementById('hero-desc');
+    const shopTitle = document.getElementById('shop-section-title');
+
+    const seoDesc = document.getElementById('seo-description');
+    const seoKeys = document.getElementById('seo-keywords');
+
+    if (regKey === 'all' || !regKey) {
+      // 💡 메인 타이틀 요청 스타일 적용
+      const defaultTitle = "서울출장마사지 건마몽 - 서울 인천 수원 부천 안산 전지역";
+      const defaultDesc = "서울출장마사지 건마몽은 서울, 인천, 수원, 부천, 안산 등 전지역 24시간 출장마사지, 출장안마, 출장홈타이 전문 안내 플랫폼입니다.";
+      const defaultKeys = "서울출장마사지, 건마몽, 인천출장마사지, 수원출장마사지, 부천출장마사지, 안산출장마사지, 출장마사지, 출장안마, 출장홈타이";
+
+      document.title = defaultTitle;
+      seoDesc.setAttribute("content", defaultDesc);
+      seoKeys.setAttribute("content", defaultKeys);
+
+      bText.innerHTML = "전체 메인 ➔ 수도권 출장마사지 통합 안내";
+      heroEyebrow.innerText = "수도권 24시간 출장마사지";
+      heroTitle.innerHTML = "서울출장마사지 건마몽 -<br>서울 인천 수원 부천 안산 전지역";
+      heroDesc.innerText = "엄선된 프리미엄 출장마사지 제휴 업체의 코스와 요금을 확인하시고 바로 전화/문자로 편하게 예약해 보세요.";
+      shopTitle.innerText = "수도권 대표 제휴 출장마사지 업체 (5개 업체 안내)";
+    } else {
+      const regObj = regionData[regKey];
+      let titleStr = regObj.name;
+      let breadStr = `메인 ➔ ${regObj.name}`;
+
+      if (distKey && regObj.districts[distKey]) {
+        const distObj = regObj.districts[distKey];
+        titleStr += ` ${distObj.name}`;
+        breadStr += ` ➔ ${distObj.name}`;
+
+        if (dongName) {
+          titleStr += ` ${dongName}`;
+          breadStr += ` ➔ ${dongName}`;
+        }
+      }
+
+      const dynamicTitle = `${titleStr} 출장마사지 건마몽 - 24시 방문 홈케어`;
+      const dynamicDesc = `${titleStr} 출장마사지 전문 안내. ${titleStr} 지역 자택, 호텔, 오피스텔 등 원하는 장소로 25분 내 빠른 방문하는 24시 출장안마·홈타이 추천 업체 정보를 확인하세요.`;
+      const dynamicKeys = `${titleStr}출장마사지, ${titleStr}출장안마, ${titleStr}홈타이, ${titleStr}마사지, ${titleStr}방문마사지, 출장마사지, 건마몽`;
+
+      document.title = dynamicTitle;
+      seoDesc.setAttribute("content", dynamicDesc);
+      seoKeys.setAttribute("content", dynamicKeys);
+
+      bText.innerText = breadStr;
+      heroEyebrow.innerText = `${titleStr} 출장마사지 전용 페이지`;
+      heroTitle.innerText = `${titleStr} 출장마사지 건마몽`;
+      heroDesc.innerText = `${titleStr} 지역 자택, 호텔, 오피스텔 어디서나 25분 내 빠른 방문이 가능한 추천 출장마사지 업체 5곳입니다.`;
+      shopTitle.innerText = `${titleStr} 추천 출장마사지 업체 목록`;
+    }
+  }
+
+  function renderSubRegionLinks(regKey, distKey, dongName, container) {
+    container.innerHTML = "";
+
+    if (regKey === 'all' || !regKey) {
+      ['seoul', 'gyeonggi', 'incheon', 'cheonan'].forEach(rK => {
+        const rObj = regionData[rK];
+        let cardHtml = `<div class="gmm-subregion-card">
+          <span class="gmm-subregion-title">📍 ${rObj.name} 세부 출장마사지 지역 선택</span>
+          <div class="gmm-links-grid">`;
+        
+        Object.keys(rObj.districts).forEach(dK => {
+          const dObj = rObj.districts[dK];
+          cardHtml += `<button class="gmm-link-item" onclick="navigateTo('${rK}-${dK}')">${dObj.name} 출장마사지 ➔</button>`;
+        });
+
+        cardHtml += `</div></div>`;
+        container.innerHTML += cardHtml;
+      });
+    } else if (regionData[regKey]) {
+      const rObj = regionData[regKey];
+
+      let cardHtml = `<div class="gmm-subregion-card">
+        <span class="gmm-subregion-title">📍 ${rObj.name} 세부 출장마사지 구/시 선택</span>
+        <div class="gmm-links-grid">`;
+      
+      Object.keys(rObj.districts).forEach(dK => {
+        const dObj = rObj.districts[dK];
+        const activeClass = (dK === distKey) ? "active" : "";
+        cardHtml += `<button class="gmm-link-item ${activeClass}" onclick="navigateTo('${regKey}-${dK}')">${dObj.name} 출장마사지 ➔</button>`;
+      });
+      cardHtml += `</div></div>`;
+
+      if (distKey && rObj.districts[distKey]) {
+        const dObj = rObj.districts[distKey];
+        cardHtml += `<div class="gmm-subregion-card" style="background:#fff; border-color:#1f486d;">
+          <span class="gmm-subregion-title">🏡 ${rObj.name} ${dObj.name} 세부 동 출장마사지 선택</span>
+          <div class="gmm-links-grid">
+            <button class="gmm-link-item ${!dongName ? 'active' : ''}" onclick="navigateTo('${regKey}-${distKey}')">${dObj.name} 전체</button>`;
+
+        dObj.dongs.forEach(dong => {
+          const activeClass = (dong === dongName) ? "active" : "";
+          cardHtml += `<button class="gmm-link-item ${activeClass}" style="background:#f7f3ea;" onclick="navigateTo('${regKey}-${distKey}-${dong}')">${dong} 출장마사지 ➔</button>`;
+        });
+        cardHtml += `</div></div>`;
+      }
+
+      container.innerHTML = cardHtml;
+    }
+  }
+
+  function renderShops(regKey, distKey, dongName, container) {
+    container.innerHTML = "";
+
+    let locLabel = "서울 / 경기 / 인천 / 천안 전지역";
+    if (regKey && regKey !== 'all' && regionData[regKey]) {
+      const regObj = regionData[regKey];
+      locLabel = regObj.name;
+      if (distKey && regObj.districts[distKey]) {
+        locLabel += ` ${regObj.districts[distKey].name}`;
+        if (dongName) locLabel += ` ${dongName}`;
+      }
+    }
+
+    shopsData.forEach(shop => {
+      let coursesHtml = "";
+      shop.courses.forEach(c => {
+        coursesHtml += `<div class="gmm-course-item">
+          <span class="gmm-course-name">${c.name}</span>
+          <span class="gmm-course-price">${c.price}</span>
+        </div>`;
+      });
+
+      const smsText = encodeURIComponent(`안녕하세요. 건마몽 보고 [${locLabel} 출장마사지] 예약 문의드립니다.`);
+
+      const cardHtml = `
+        <div class="gmm-shop-card">
+          <img src="${shop.img}" alt="${shop.name}" class="gmm-shop-img">
+          <div class="gmm-shop-info">
+            <div class="gmm-shop-header">
+              <span class="gmm-shop-badge">${shop.badge}</span>
+              <span class="gmm-shop-location">📍 ${locLabel} 25분 내 신속 방문</span>
+            </div>
+            <h3 class="gmm-shop-name">${shop.name}</h3>
+            <p class="gmm-shop-desc">${shop.desc}</p>
+            <div class="gmm-courses-box">
+              ${coursesHtml}
+            </div>
+          </div>
+          <div class="gmm-shop-action">
+            <span class="gmm-shop-phone-num">${shop.phone}</span>
+            <a href="tel:${shop.phone}" class="gmm-btn-call">📞 전화 연결하기</a>
+            <a href="sms:${shop.phone}?body=${smsText}" class="gmm-btn-sms">💬 문자 예약하기</a>
+          </div>
+        </div>
+      `;
+      container.innerHTML += cardHtml;
+    });
+  }
+
+  window.onpopstate = function(e) {
+    const page = e.state ? e.state.page : 'all';
+    renderPage(page);
+  };
+
+  window.onload = function() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const pageParam = urlParams.get('page') || 'all';
+    renderPage(pageParam);
+  };
+</script>
+
+</body>
+</html>
