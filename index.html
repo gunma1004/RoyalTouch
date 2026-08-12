@@ -8,10 +8,21 @@
   <meta name="naver-site-verification" content="cc3d22a0a02978e64bc81a04a4e0ead2d14b87b0" />
   <meta name="google-site-verification" content="Ue277DSb_h0qngELVyMSTYsqEaBfIr0N6i8IMfr4NtA" />
 
-  <!-- 동적 SEO 메타 태그 (자바스크립트에 의해 동적으로 변경됩니다) -->
+  <!-- 동적 SEO 메타 태그 -->
   <title id="seo-title">서울출장마사지 건마몽 - 서울 인천 수원 부천 안산 전지역</title>
   <meta id="seo-description" name="description" content="서울출장마사지 건마몽은 서울, 인천, 수원, 부천, 안산 등 전지역 24시간 출장마사지, 출장안마, 출장홈타이 전문 안내 플랫폼입니다.">
   <meta id="seo-keywords" name="keywords" content="서울출장마사지, 건마몽, 인천출장마사지, 수원출장마사지, 부천출장마사지, 안산출장마사지, 출장마사지, 출장안마, 출장홈타이">
+
+  <!-- 🌟 Open Graph 메타 태그 (네이버 및 소셜 미디어 공유용) -->
+  <meta property="og:type" content="website">
+  <meta id="og-title" property="og:title" content="서울출장마사지 건마몽 - 서울 인천 수원 부천 안산 전지역">
+  <meta id="og-description" property="og:description" content="서울출장마사지 건마몽은 서울, 인천, 수원, 부천, 안산 등 전지역 24시간 출장마사지, 출장안마, 출장홈타이 전문 안내 플랫폼입니다.">
+  <meta id="og-url" property="og:url" content="https://gunmamong.shop/">
+  <meta property="og:image" content="https://gunmamong.shop/images/banner.jpg">
+  <meta property="og:site_name" content="건마몽">
+  
+  <!-- 🌟 Canonical 대표 URL 지정 (여기에 넣어주세요!) -->
+  <link rel="canonical" href="https://gunmamong.shop/">
 
   <style>
     /* Reset & Base */
@@ -652,7 +663,7 @@
     renderShops(currentRegion, currentDistrict, currentDong, shopContainer);
   }
 
-  // SEO 메타 태그 & 메인 타이틀 업데이트 함수
+  // SEO 메타 태그 & 메인 타이틀 업데이트 함수 (Open Graph 업데이트 로직 포함)
   function updateSEOAndHeadings(regKey, distKey, dongName) {
     const bText = document.getElementById('breadcrumb-text');
     const heroEyebrow = document.getElementById('hero-eyebrow');
@@ -662,6 +673,10 @@
 
     const seoDesc = document.getElementById('seo-description');
     const seoKeys = document.getElementById('seo-keywords');
+    
+    const ogTitle = document.getElementById('og-title');
+    const ogDesc = document.getElementById('og-description');
+    const ogUrl = document.getElementById('og-url');
 
     if (regKey === 'all' || !regKey) {
       const defaultTitle = "서울출장마사지 건마몽 - 서울 인천 수원 부천 안산 전지역";
@@ -671,6 +686,10 @@
       document.title = defaultTitle;
       seoDesc.setAttribute("content", defaultDesc);
       seoKeys.setAttribute("content", defaultKeys);
+
+      if (ogTitle) ogTitle.setAttribute("content", defaultTitle);
+      if (ogDesc) ogDesc.setAttribute("content", defaultDesc);
+      if (ogUrl) ogUrl.setAttribute("content", window.location.href);
 
       bText.innerHTML = "전체 메인 ➔ 수도권 출장마사지 통합 안내";
       heroEyebrow.innerText = "수도권 24시간 출장마사지";
@@ -700,6 +719,10 @@
       document.title = dynamicTitle;
       seoDesc.setAttribute("content", dynamicDesc);
       seoKeys.setAttribute("content", dynamicKeys);
+
+      if (ogTitle) ogTitle.setAttribute("content", dynamicTitle);
+      if (ogDesc) ogDesc.setAttribute("content", dynamicDesc);
+      if (ogUrl) ogUrl.setAttribute("content", window.location.href);
 
       bText.innerText = breadStr;
       heroEyebrow.innerText = `${titleStr} 출장마사지 전용 페이지`;
