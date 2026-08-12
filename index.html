@@ -22,7 +22,7 @@
   <meta property="og:image" content="https://gunmamong.shop/images/banner.jpg">
   <meta property="og:site_name" content="건마몽">
 
-  <!-- Canonical URL (메인 주소로 지정) -->
+  <!-- Canonical URL -->
   <link rel="canonical" href="https://gunmamong.shop/">
 
   <style>
@@ -33,15 +33,21 @@
     .gmm-eyebrow { display: inline-flex !important; align-items: center !important; gap: 8px !important; padding: 8px 14px !important; border-radius: 999px !important; background: rgba(31, 72, 109, 0.09) !important; color: #1f486d !important; font-size: 13px !important; font-weight: 800 !important; }
     .gmm-eyebrow::before { content: "" !important; width: 7px !important; height: 7px !important; border-radius: 50% !important; background: #d8a85f !important; box-shadow: 0 0 0 5px rgba(216, 168, 95, 0.18) !important; }
     .gmm-section-title { margin: 16px 0 0 !important; font-size: clamp(26px, 3.8vw, 40px) !important; line-height: 1.25 !important; font-weight: 900 !important; color: #172236 !important; word-break: keep-all !important; }
+    
+    /* Navigation Bar */
     .gmm-nav-bar { background: #1f486d !important; color: #fff !important; padding: 14px 0 !important; border-bottom: 1px solid rgba(0,0,0,0.1) !important; }
     .gmm-nav-content { display: flex !important; justify-content: space-between !important; align-items: center !important; flex-wrap: wrap !important; gap: 10px !important; }
     .gmm-logo-text { font-size: 20px !important; font-weight: 950 !important; color: #FFE921 !important; }
     .gmm-breadcrumb { font-size: 14px !important; font-weight: 700 !important; color: rgba(255,255,255,0.9) !important; }
     .gmm-home-btn { background: rgba(255,255,255,0.15) !important; color: #fff !important; padding: 6px 14px !important; border-radius: 8px !important; font-size: 13px !important; font-weight: 800 !important; cursor: pointer !important; border: none !important; }
     .gmm-home-btn:hover { background: rgba(255,255,255,0.3) !important; }
+
+    /* Hero Section */
     .gmm-hero { padding: 40px 0 20px !important; background: linear-gradient(135deg, rgba(255,255,255,0.85), rgba(247,243,234,0.85)), linear-gradient(135deg, #f7f3ea, #fffaf2) !important; text-align: center !important; }
     .gmm-hero h1 { margin: 12px 0 0 !important; font-size: clamp(24px, 3.6vw, 38px) !important; line-height: 1.3 !important; font-weight: 950 !important; color: #172236 !important; word-break: keep-all !important; }
     .gmm-hero p { margin-top: 10px !important; color: #596579 !important; font-size: 15px !important; }
+
+    /* Banner & Shop List */
     .gmm-banner-section { padding: 20px 0 10px !important; }
     .gmm-main-banner-img { width: 100% !important; max-height: 380px !important; object-fit: cover !important; border-radius: 20px !important; box-shadow: 0 10px 25px rgba(0,0,0,0.08) !important; border: 1px solid rgba(0,0,0,0.05) !important; display: block !important; }
     .gmm-shop-section { padding: 30px 0 50px !important; background: #f1ecdf !important; }
@@ -63,15 +69,20 @@
     .gmm-shop-phone-num { font-size: 16px !important; font-weight: 900 !important; color: #172236 !important; margin-bottom: 4px !important; }
     .gmm-btn-call { background: linear-gradient(135deg, #1f486d, #172236) !important; color: #fff !important; padding: 12px 18px !important; border-radius: 10px !important; font-size: 14px !important; font-weight: 900 !important; display: inline-flex !important; align-items: center !important; justify-content: center !important; width: 100% !important; box-shadow: 0 4px 12px rgba(31, 72, 109, 0.25) !important; }
     .gmm-btn-sms { background: #FFE921 !important; color: #172236 !important; padding: 11px 18px !important; border-radius: 10px !important; font-size: 14px !important; font-weight: 900 !important; display: inline-flex !important; align-items: center !important; justify-content: center !important; width: 100% !important; border: 1px solid rgba(0,0,0,0.1) !important; }
+
+    /* Region Box & Tabs */
     .gmm-region-box { padding: 40px 0 !important; background: #fff !important; border-top: 1px solid rgba(31, 72, 109, 0.08) !important; border-bottom: 1px solid rgba(31, 72, 109, 0.08) !important; }
     .gmm-tabs { display: flex !important; justify-content: center !important; gap: 10px !important; margin-bottom: 20px !important; flex-wrap: wrap !important; }
-    .gmm-tab { padding: 10px 22px !important; border-radius: 999px !important; background: #f7f3ea !important; color: #1f486d !important; font-weight: 850 !important; font-size: 15px !important; border: 1px solid rgba(31, 72, 109, 0.15) !important; cursor: pointer !important; text-decoration: none !important; }
-    .gmm-tab.active { background: #1f486d !important; color: #fff !important; border-color: #1f486d !important; }
+    .gmm-tab { padding: 10px 22px !important; border-radius: 999px !important; background: #f7f3ea !important; color: #1f486d !important; font-weight: 850 !important; font-size: 15px !important; border: 1px solid rgba(31, 72, 109, 0.15) !important; cursor: pointer !important; text-decoration: none !important; transition: all 0.2s ease !important; }
+    .gmm-tab.active, .gmm-tab:hover { background: #1f486d !important; color: #fff !important; border-color: #1f486d !important; }
+
     .gmm-subregion-card { background: #f8f6f0 !important; border-radius: 16px !important; padding: 20px !important; border: 1px solid rgba(31, 72, 109, 0.08) !important; margin-bottom: 16px !important; }
     .gmm-subregion-title { font-size: 16px !important; font-weight: 900 !important; color: #172236 !important; margin-bottom: 12px !important; display: block !important; }
     .gmm-links-grid { display: flex !important; flex-wrap: wrap !important; gap: 8px !important; }
     .gmm-link-item { background: #fff !important; color: #1f486d !important; border: 1px solid rgba(0,0,0,0.08) !important; padding: 8px 14px !important; border-radius: 8px !important; font-size: 13.5px !important; font-weight: 700 !important; cursor: pointer !important; transition: all 0.2s ease !important; text-decoration: none !important; display: inline-block !important; }
-    .gmm-link-item:hover, .gmm-link-item.active { background: #1f486d !important; color: #fff !important; }
+    .gmm-link-item:hover { background: #1f486d !important; color: #fff !important; }
+
+    /* Q&A & Footer */
     .gmm-qna-section { padding: 60px 0 !important; background: #fff !important; }
     .gmm-qna-list { display: flex !important; flex-direction: column !important; gap: 16px !important; margin-top: 30px !important; }
     .gmm-qna-item { border: 1px solid rgba(31, 72, 109, 0.12) !important; border-radius: 16px !important; padding: 20px 24px !important; background: #fdfcf9 !important; }
@@ -79,6 +90,7 @@
     .gmm-qna-q-badge { background: #1f486d !important; color: #fff !important; width: 26px !important; height: 26px !important; border-radius: 50% !important; display: inline-flex !important; align-items: center !important; justify-content: center !important; font-size: 14px !important; }
     .gmm-qna-a { font-size: 14.5px !important; color: #596579 !important; line-height: 1.7 !important; padding-left: 36px !important; margin: 0 !important; }
     .gmm-footer { background: #222 !important; color: #999 !important; padding: 40px 0 !important; text-align: center !important; font-size: 13px !important; line-height: 1.8 !important; }
+
     @media(max-width: 768px) {
       .gmm-shop-card { flex-direction: column !important; align-items: stretch !important; }
       .gmm-shop-img { width: 100% !important; height: 180px !important; }
@@ -124,21 +136,23 @@
     </div>
   </section>
 
-  <!-- 지역 이동 박스 -->
+  <!-- 지역 이동 선택 영역 -->
   <section class="gmm-region-box">
     <div class="gmm-container">
       <div style="text-align:center; margin-bottom: 20px;">
         <span class="gmm-eyebrow">LOCATION SEARCH</span>
         <h2 class="gmm-section-title">원하시는 지역별 출장마사지 전용 페이지 이동</h2>
       </div>
-      <div class="gmm-tabs">
-  <a href="/" class="gmm-tab active">전체 메인 (서울통합)</a>
-  <a href="/gyeonggi/" class="gmm-tab">경기도</a>
-  <a href="/incheon/" class="gmm-tab">인천광역시</a>
-  <a href="/cheonan/" class="gmm-tab">천안시</a>
-</div>
       
-      <!-- 🌟 세부 링크 카드가 로봇 수집이 가능하도록 생성됨 -->
+      <!-- 1차 광역 선택 탭 -->
+      <div class="gmm-tabs">
+        <button class="gmm-tab active" onclick="switchRegionTab('seoul', this)">서울특별시</button>
+        <button class="gmm-tab" onclick="switchRegionTab('gyeonggi', this)">경기도</button>
+        <button class="gmm-tab" onclick="switchRegionTab('incheon', this)">인천광역시</button>
+        <button class="gmm-tab" onclick="switchRegionTab('cheonan', this)">천안시</button>
+      </div>
+      
+      <!-- 2차 세부 구/시 이동 링크 카드 컨테이너 -->
       <div id="subregion-container"></div>
     </div>
   </section>
@@ -167,34 +181,50 @@
 </div>
 
 <script>
-  // 🌟 검색로봇이 링크 경로를 인식할 수 있도록 서울 주요 구 링크 카드 생성 데이터
-  const seoulDistricts = [
-    { key: "seoul-gangnam", name: "강남구" },
-    { key: "seoul-seocho", name: "서초구" },
-    { key: "seoul-songpa", name: "송파구" },
-    { key: "seoul-gangdong", name: "강동구" },
-    { key: "seoul-mapo", name: "마포구" },
-    { key: "seoul-yeongdeungpo", name: "영등포구" },
-    { key: "seoul-yongsan", name: "용산구" },
-    { key: "seoul-seongdong", name: "성동구" },
-    { key: "seoul-gwangjin", name: "광진구" },
-    { key: "seoul-dongdaemun", name: "동대문구" },
-    { key: "seoul-jungnang", name: "중랑구" },
-    { key: "seoul-seongbuk", name: "성북구" },
-    { key: "seoul-gangbuk", name: "강북구" },
-    { key: "seoul-dobong", name: "도봉구" },
-    { key: "seoul-nowon", name: "노원구" },
-    { key: "seoul-eunpyeong", name: "은평구" },
-    { key: "seoul-seodaemun", name: "서대문구" },
-    { key: "seoul-jongno", name: "종로구" },
-    { key: "seoul-junggu", name: "중구" },
-    { key: "seoul-gangseo", name: "강서구" },
-    { key: "seoul-yangcheon", name: "양천구" },
-    { key: "seoul-guro", name: "구로구" },
-    { key: "seoul-geumcheon", name: "금천구" },
-    { key: "seoul-gwanak", name: "관악구" },
-    { key: "seoul-dongjak", name: "동작구" }
-  ];
+  // 광역별 세부 구/시 데이터
+  const regionLinksData = {
+    seoul: {
+      name: "서울특별시",
+      links: [
+        { key: "seoul-gangnam", name: "강남구" }, { key: "seoul-seocho", name: "서초구" },
+        { key: "seoul-songpa", name: "송파구" }, { key: "seoul-gangdong", name: "강동구" },
+        { key: "seoul-mapo", name: "마포구" }, { key: "seoul-yeongdeungpo", name: "영등포구" },
+        { key: "seoul-yongsan", name: "용산구" }, { key: "seoul-seongdong", name: "성동구" },
+        { key: "seoul-gwangjin", name: "광진구" }, { key: "seoul-dongdaemun", name: "동대문구" },
+        { key: "seoul-jungnang", name: "중랑구" }, { key: "seoul-seongbuk", name: "성북구" },
+        { key: "seoul-gangbuk", name: "강북구" }, { key: "seoul-dobong", name: "도봉구" },
+        { key: "seoul-nowon", name: "노원구" }, { key: "seoul-eunpyeong", name: "은평구" },
+        { key: "seoul-seodaemun", name: "서대문구" }, { key: "seoul-jongno", name: "종로구" },
+        { key: "seoul-junggu", name: "중구" }, { key: "seoul-gangseo", name: "강서구" },
+        { key: "seoul-yangcheon", name: "양천구" }, { key: "seoul-guro", name: "구로구" },
+        { key: "seoul-geumcheon", name: "금천구" }, { key: "seoul-gwanak", name: "관악구" },
+        { key: "seoul-dongjak", name: "동작구" }
+      ]
+    },
+    gyeonggi: {
+      name: "경기도",
+      links: [
+        { key: "gyeonggi-suwon", name: "수원시" }, { key: "gyeonggi-seongnam", name: "성남시(분당)" },
+        { key: "gyeonggi-bucheon", name: "부천시" }, { key: "gyeonggi-ansan", name: "안산시" },
+        { key: "gyeonggi-goyang", name: "고양시(일산)" }, { key: "gyeonggi-yongin", name: "용인시" },
+        { key: "gyeonggi-hwaseong", name: "화성시(동탄)" }, { key: "gyeonggi-pyeongtaek", name: "평택시" },
+        { key: "gyeonggi-siheung", name: "시흥시" }, { key: "gyeonggi-gimpo", name: "김포시" }
+      ]
+    },
+    incheon: {
+      name: "인천광역시",
+      links: [
+        { key: "incheon-yeonsu", name: "연수구(송도)" }, { key: "incheon-bupyeong", name: "부평구" },
+        { key: "incheon-seogu", name: "서구(청라)" }, { key: "incheon-namdong", name: "남동구" }
+      ]
+    },
+    cheonan: {
+      name: "천안시",
+      links: [
+        { key: "cheonan-seobuk", name: "서북구(두정/불당)" }, { key: "cheonan-dongnam", name: "동남구(신부/청당)" }
+      ]
+    }
+  };
 
   const shopsData = [
     { id: 1, name: "한국미인홈케어", phone: "0507-1280-3288", badge: "추천업체", desc: "24시 정성 가득한 타이 & 아로마 전문 케어 (전지역 30분 내 신속 방문)", img: "/images/shop1.jpg", courses: [{ name: "아로디시 관리 (60분)", price: "90,000원" }, { name: "스웨디시 케어 (60분)", price: "140,000원" }] },
@@ -204,19 +234,35 @@
     { id: 5, name: "지금될까홈타이", phone: "0507-1280-3228", badge: "만족도1위", desc: "후불제 안심 이용, 해당 권역 25분 내 빠른 도착", img: "/images/shop5.jpg", courses: [{ name: "타이 코스 (60분)", price: "60,000원" }, { name: "스웨디시 코스 (60분)", price: "140,000원" }] }
   ];
 
-  window.onload = function() {
-    // 1. 세부 지역 링크 렌더링
+  // 탭 전환 및 하단 링크 렌더링 함수
+  function renderSubRegionCards(regKey) {
     const subContainer = document.getElementById('subregion-container');
-    let subHtml = `<div class="gmm-subregion-card">
-      <span class="gmm-subregion-title">📍 서울특별시 세부 구별 출장마사지 바로가기</span>
-      <div class="gmm-links-grid">`;
-    seoulDistricts.forEach(d => {
-      subHtml += `<a href="/${d.key}/" class="gmm-link-item">${d.name} 출장마사지 ➔</a>`;
-    });
-    subHtml += `</div></div>`;
-    subContainer.innerHTML = subHtml;
+    const regObj = regionLinksData[regKey];
+    if (!regObj) return;
 
-    // 2. 업체 리스트 렌더링
+    let html = `<div class="gmm-subregion-card">
+      <span class="gmm-subregion-title">📍 ${regObj.name} 세부 출장마사지 지역 선택</span>
+      <div class="gmm-links-grid">`;
+    
+    regObj.links.forEach(item => {
+      html += `<a href="/${item.key}/" class="gmm-link-item">${item.name} 출장마사지 ➔</a>`;
+    });
+
+    html += `</div></div>`;
+    subContainer.innerHTML = html;
+  }
+
+  function switchRegionTab(regKey, btnEl) {
+    document.querySelectorAll('.gmm-tab').forEach(t => t.classList.remove('active'));
+    btnEl.classList.add('active');
+    renderSubRegionCards(regKey);
+  }
+
+  window.onload = function() {
+    // 1. 기본 서울지역 세부 카드 렌더링
+    renderSubRegionCards('seoul');
+
+    // 2. 추천 업체 리스트 렌더링
     const shopContainer = document.getElementById('shop-list-container');
     shopsData.forEach(shop => {
       let coursesHtml = "";
