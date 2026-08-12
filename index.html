@@ -8,21 +8,75 @@
   <meta name="naver-site-verification" content="cc3d22a0a02978e64bc81a04a4e0ead2d14b87b0" />
   <meta name="google-site-verification" content="Ue277DSb_h0qngELVyMSTYsqEaBfIr0N6i8IMfr4NtA" />
 
-  <!-- 동적 SEO 메타 태그 -->
+  <!-- 🌟 초기 동적 SEO 태그 (JS 구동 전 기본값 + 아래 인라인 스크립트로 즉시 변경됨) -->
   <title id="seo-title">서울출장마사지 건마몽 - 서울 인천 수원 부천 안산 전지역</title>
   <meta id="seo-description" name="description" content="서울출장마사지 건마몽은 서울, 인천, 수원, 부천, 안산 등 전지역 24시간 출장마사지, 출장안마, 출장홈타이 전문 안내 플랫폼입니다.">
   <meta id="seo-keywords" name="keywords" content="서울출장마사지, 건마몽, 인천출장마사지, 수원출장마사지, 부천출장마사지, 안산출장마사지, 출장마사지, 출장안마, 출장홈타이">
 
-  <!-- 🌟 Open Graph 메타 태그 (네이버 및 소셜 미디어 공유용) -->
+  <!-- Open Graph 메타 태그 -->
   <meta property="og:type" content="website">
   <meta id="og-title" property="og:title" content="서울출장마사지 건마몽 - 서울 인천 수원 부천 안산 전지역">
   <meta id="og-description" property="og:description" content="서울출장마사지 건마몽은 서울, 인천, 수원, 부천, 안산 등 전지역 24시간 출장마사지, 출장안마, 출장홈타이 전문 안내 플랫폼입니다.">
   <meta id="og-url" property="og:url" content="https://gunmamong.shop/">
   <meta property="og:image" content="https://gunmamong.shop/images/banner.jpg">
   <meta property="og:site_name" content="건마몽">
-  
-  <!-- 🌟 Canonical 대표 URL 지정 (여기에 넣어주세요!) -->
-  <link rel="canonical" href="https://gunmamong.shop/">
+
+  <!-- 동적 Canonical URL -->
+  <link id="canonical-url" rel="canonical" href="https://gunmamong.shop/">
+
+  <!-- 🌟 [핵심] head 로딩 즉시 URL 파라미터 파싱하여 SEO 태그를 즉시 변경하는 스크립트 -->
+  <script>
+    (function() {
+      const regionNames = {
+        seoul: "서울특별시", gyeonggi: "경기도", incheon: "인천광역시", cheonan: "천안시",
+        gangnam: "강남구", seocho: "서초구", songpa: "송파구", gangdong: "강동구", mapo: "마포구",
+        yeongdeungpo: "영등포구", yongsan: "용산구", seongdong: "성동구", gwangjin: "광진구",
+        dongdaemun: "동대문구", jungnang: "중랑구", seongbuk: "성북구", gangbuk: "강북구",
+        dobong: "도봉구", nowon: "노원구", eunpyeong: "은평구", seodaemun: "서대문구",
+        jongno: "종로구", junggu: "중구", gangseo: "강서구", yangcheon: "양천구", guro: "구로구",
+        geumcheon: "금천구", gwanak: "관악구", dongjak: "동작구", suwon: "수원시", seongnam: "성남시",
+        bucheon: "부천시", ansan: "안산시", goyang: "고양시", yongin: "용인시", hwaseong: "화성시"
+      };
+
+      const urlParams = new URLSearchParams(window.location.search);
+      const pageParam = urlParams.get('page');
+
+      if (pageParam && pageParam !== 'all') {
+        const parts = pageParam.split('-');
+        let locationStr = "";
+
+        parts.forEach(part => {
+          if (regionNames[part]) {
+            locationStr += (locationStr ? " " : "") + regionNames[part];
+          } else {
+            locationStr += (locationStr ? " " : "") + decodeURIComponent(part);
+          }
+        });
+
+        const titleText = `${locationStr} 출장마사지 건마몽 - 24시 방문 홈케어`;
+        const descText = `${locationStr} 출장마사지 전문 안내. ${locationStr} 지역 자택, 호텔, 오피스텔 어디서나 25분 내 빠른 방문하는 24시 출장안마·홈타이 추천 업체 정보입니다.`;
+        const currentFullUrl = window.location.href;
+
+        document.title = titleText;
+        
+        // meta 태그 즉시 변경
+        var metaDesc = document.getElementById('seo-description');
+        if (metaDesc) metaDesc.setAttribute('content', descText);
+        
+        var ogTitle = document.getElementById('og-title');
+        if (ogTitle) ogTitle.setAttribute('content', titleText);
+
+        var ogDesc = document.getElementById('og-description');
+        if (ogDesc) ogDesc.setAttribute('content', descText);
+
+        var ogUrl = document.getElementById('og-url');
+        if (ogUrl) ogUrl.setAttribute('content', currentFullUrl);
+
+        var canonical = document.getElementById('canonical-url');
+        if (canonical) canonical.setAttribute('href', currentFullUrl);
+      }
+    })();
+  </script>
 
   <style>
     /* Reset & Base */
@@ -663,7 +717,6 @@
     renderShops(currentRegion, currentDistrict, currentDong, shopContainer);
   }
 
-  // SEO 메타 태그 & 메인 타이틀 업데이트 함수 (Open Graph 업데이트 로직 포함)
   function updateSEOAndHeadings(regKey, distKey, dongName) {
     const bText = document.getElementById('breadcrumb-text');
     const heroEyebrow = document.getElementById('hero-eyebrow');
@@ -677,6 +730,7 @@
     const ogTitle = document.getElementById('og-title');
     const ogDesc = document.getElementById('og-description');
     const ogUrl = document.getElementById('og-url');
+    const canonical = document.getElementById('canonical-url');
 
     if (regKey === 'all' || !regKey) {
       const defaultTitle = "서울출장마사지 건마몽 - 서울 인천 수원 부천 안산 전지역";
@@ -684,12 +738,13 @@
       const defaultKeys = "서울출장마사지, 건마몽, 인천출장마사지, 수원출장마사지, 부천출장마사지, 안산출장마사지, 출장마사지, 출장안마, 출장홈타이";
 
       document.title = defaultTitle;
-      seoDesc.setAttribute("content", defaultDesc);
-      seoKeys.setAttribute("content", defaultKeys);
+      if (seoDesc) seoDesc.setAttribute("content", defaultDesc);
+      if (seoKeys) seoKeys.setAttribute("content", defaultKeys);
 
       if (ogTitle) ogTitle.setAttribute("content", defaultTitle);
       if (ogDesc) ogDesc.setAttribute("content", defaultDesc);
       if (ogUrl) ogUrl.setAttribute("content", window.location.href);
+      if (canonical) canonical.setAttribute("href", window.location.href);
 
       bText.innerHTML = "전체 메인 ➔ 수도권 출장마사지 통합 안내";
       heroEyebrow.innerText = "수도권 24시간 출장마사지";
@@ -698,10 +753,10 @@
       shopTitle.innerText = "수도권 대표 제휴 출장마사지 업체 (5개 업체 안내)";
     } else {
       const regObj = regionData[regKey];
-      let titleStr = regObj.name;
-      let breadStr = `메인 ➔ ${regObj.name}`;
+      let titleStr = regObj ? regObj.name : regKey;
+      let breadStr = `메인 ➔ ${titleStr}`;
 
-      if (distKey && regObj.districts[distKey]) {
+      if (regObj && distKey && regObj.districts[distKey]) {
         const distObj = regObj.districts[distKey];
         titleStr += ` ${distObj.name}`;
         breadStr += ` ➔ ${distObj.name}`;
@@ -717,12 +772,13 @@
       const dynamicKeys = `${titleStr}출장마사지, ${titleStr}출장안마, ${titleStr}홈타이, ${titleStr}마사지, ${titleStr}방문마사지, 출장마사지, 건마몽`;
 
       document.title = dynamicTitle;
-      seoDesc.setAttribute("content", dynamicDesc);
-      seoKeys.setAttribute("content", dynamicKeys);
+      if (seoDesc) seoDesc.setAttribute("content", dynamicDesc);
+      if (seoKeys) seoKeys.setAttribute("content", dynamicKeys);
 
       if (ogTitle) ogTitle.setAttribute("content", dynamicTitle);
       if (ogDesc) ogDesc.setAttribute("content", dynamicDesc);
       if (ogUrl) ogUrl.setAttribute("content", window.location.href);
+      if (canonical) canonical.setAttribute("href", window.location.href);
 
       bText.innerText = breadStr;
       heroEyebrow.innerText = `${titleStr} 출장마사지 전용 페이지`;
