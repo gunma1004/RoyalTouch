@@ -8,12 +8,15 @@
   <meta name="naver-site-verification" content="cc3d22a0a02978e64bc81a04a4e0ead2d14b87b0" />
   <meta name="google-site-verification" content="Ue277DSb_h0qngELVyMSTYsqEaBfIr0N6i8IMfr4NtA" />
 
-  <!-- 🌟 초기 동적 SEO 태그 (JS 구동 전 기본값 + 아래 인라인 스크립트로 즉시 변경됨) -->
+  <!-- 파비콘 설정 -->
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+  <!-- 🌟 초기 동적 SEO 태그 -->
   <title id="seo-title">서울출장마사지 건마몽 - 서울 인천 수원 부천 안산 전지역</title>
   <meta id="seo-description" name="description" content="서울출장마사지 건마몽은 서울, 인천, 수원, 부천, 안산 등 전지역 24시간 출장마사지, 출장안마, 출장홈타이 전문 안내 플랫폼입니다.">
   <meta id="seo-keywords" name="keywords" content="서울출장마사지, 건마몽, 인천출장마사지, 수원출장마사지, 부천출장마사지, 안산출장마사지, 출장마사지, 출장안마, 출장홈타이">
 
-  <!-- Open Graph 메타 태그 -->
+  <!-- Open Graph 메타 태그 (네이버/소셜미디어 공유용) -->
   <meta property="og:type" content="website">
   <meta id="og-title" property="og:title" content="서울출장마사지 건마몽 - 서울 인천 수원 부천 안산 전지역">
   <meta id="og-description" property="og:description" content="서울출장마사지 건마몽은 서울, 인천, 수원, 부천, 안산 등 전지역 24시간 출장마사지, 출장안마, 출장홈타이 전문 안내 플랫폼입니다.">
@@ -24,7 +27,7 @@
   <!-- 동적 Canonical URL -->
   <link id="canonical-url" rel="canonical" href="https://gunmamong.shop/">
 
-  <!-- 🌟 [핵심] head 로딩 즉시 URL 파라미터 파싱하여 SEO 태그를 즉시 변경하는 스크립트 -->
+  <!-- 🌟 [검색봇 대책] Head 로딩 즉시 URL 파라미터를 파싱하여 SEO 메타태그를 동적으로 교체하는 스크립트 -->
   <script>
     (function() {
       const regionNames = {
@@ -59,7 +62,6 @@
 
         document.title = titleText;
         
-        // meta 태그 즉시 변경
         var metaDesc = document.getElementById('seo-description');
         if (metaDesc) metaDesc.setAttribute('content', descText);
         
@@ -338,6 +340,7 @@
       font-size: 15px !important;
       border: 1px solid rgba(31, 72, 109, 0.15) !important;
       cursor: pointer !important;
+      text-decoration: none !important;
     }
     .gmm-tab.active {
       background: #1f486d !important;
@@ -375,6 +378,8 @@
       font-weight: 700 !important;
       cursor: pointer !important;
       transition: all 0.2s ease !important;
+      text-decoration: none !important;
+      display: inline-block !important;
     }
     .gmm-link-item:hover, .gmm-link-item.active {
       background: #1f486d !important;
@@ -417,7 +422,7 @@
       <div class="gmm-nav-content">
         <span class="gmm-logo-text">건마몽</span>
         <div class="gmm-breadcrumb" id="breadcrumb-text">전체 메인 ➔ 수도권 출장마사지 통합 안내</div>
-        <button class="gmm-home-btn" onclick="navigateTo('all')">🏠 전체 메인으로</button>
+        <a href="/" class="gmm-home-btn" onclick="event.preventDefault(); navigateTo('all')">🏠 전체 메인으로</a>
       </div>
     </div>
   </header>
@@ -459,13 +464,13 @@
         <h2 class="gmm-section-title">원하시는 지역별 출장마사지 전용 페이지 이동</h2>
       </div>
 
-      <!-- 1차 광역 선택 탭 -->
+      <!-- 1차 광역 선택 탭 (<a href="...">으로 크롤링 가능하게 구성) -->
       <div class="gmm-tabs">
-        <button class="gmm-tab active" id="tab-all" onclick="navigateTo('all')">전체 메인</button>
-        <button class="gmm-tab" id="tab-seoul" onclick="navigateTo('seoul')">서울특별시</button>
-        <button class="gmm-tab" id="tab-gyeonggi" onclick="navigateTo('gyeonggi')">경기도</button>
-        <button class="gmm-tab" id="tab-incheon" onclick="navigateTo('incheon')">인천광역시</button>
-        <button class="gmm-tab" id="tab-cheonan" onclick="navigateTo('cheonan')">천안시</button>
+        <a href="/" class="gmm-tab active" id="tab-all" onclick="event.preventDefault(); navigateTo('all')">전체 메인</a>
+        <a href="?page=seoul" class="gmm-tab" id="tab-seoul" onclick="event.preventDefault(); navigateTo('seoul')">서울특별시</a>
+        <a href="?page=gyeonggi" class="gmm-tab" id="tab-gyeonggi" onclick="event.preventDefault(); navigateTo('gyeonggi')">경기도</a>
+        <a href="?page=incheon" class="gmm-tab" id="tab-incheon" onclick="event.preventDefault(); navigateTo('incheon')">인천광역시</a>
+        <a href="?page=cheonan" class="gmm-tab" id="tab-cheonan" onclick="event.preventDefault(); navigateTo('cheonan')">천안시</a>
       </div>
 
       <!-- 2차 구/동 세부 선택 영역 -->
@@ -788,6 +793,7 @@
     }
   }
 
+  // 🌟 링크를 <a href="..."> 태그로 생성하여 크롤러 지원 및 클릭 시 부드러운 전환 처리
   function renderSubRegionLinks(regKey, distKey, dongName, container) {
     container.innerHTML = "";
 
@@ -800,7 +806,8 @@
         
         Object.keys(rObj.districts).forEach(dK => {
           const dObj = rObj.districts[dK];
-          cardHtml += `<button class="gmm-link-item" onclick="navigateTo('${rK}-${dK}')">${dObj.name} 출장마사지 ➔</button>`;
+          const targetPage = `${rK}-${dK}`;
+          cardHtml += `<a href="?page=${targetPage}" class="gmm-link-item" onclick="event.preventDefault(); navigateTo('${targetPage}')">${dObj.name} 출장마사지 ➔</a>`;
         });
 
         cardHtml += `</div></div>`;
@@ -816,20 +823,23 @@
       Object.keys(rObj.districts).forEach(dK => {
         const dObj = rObj.districts[dK];
         const activeClass = (dK === distKey) ? "active" : "";
-        cardHtml += `<button class="gmm-link-item ${activeClass}" onclick="navigateTo('${regKey}-${dK}')">${dObj.name} 출장마사지 ➔</button>`;
+        const targetPage = `${regKey}-${dK}`;
+        cardHtml += `<a href="?page=${targetPage}" class="gmm-link-item ${activeClass}" onclick="event.preventDefault(); navigateTo('${targetPage}')">${dObj.name} 출장마사지 ➔</a>`;
       });
       cardHtml += `</div></div>`;
 
       if (distKey && rObj.districts[distKey]) {
         const dObj = rObj.districts[distKey];
+        const allTarget = `${regKey}-${distKey}`;
         cardHtml += `<div class="gmm-subregion-card" style="background:#fff; border-color:#1f486d;">
           <span class="gmm-subregion-title">🏡 ${rObj.name} ${dObj.name} 세부 동 출장마사지 선택</span>
           <div class="gmm-links-grid">
-            <button class="gmm-link-item ${!dongName ? 'active' : ''}" onclick="navigateTo('${regKey}-${distKey}')">${dObj.name} 전체</button>`;
+            <a href="?page=${allTarget}" class="gmm-link-item ${!dongName ? 'active' : ''}" onclick="event.preventDefault(); navigateTo('${allTarget}')">${dObj.name} 전체</a>`;
 
         dObj.dongs.forEach(dong => {
           const activeClass = (dong === dongName) ? "active" : "";
-          cardHtml += `<button class="gmm-link-item ${activeClass}" style="background:#f7f3ea;" onclick="navigateTo('${regKey}-${distKey}-${dong}')">${dong} 출장마사지 ➔</button>`;
+          const dongTarget = `${regKey}-${distKey}-${dong}`;
+          cardHtml += `<a href="?page=${dongTarget}" class="gmm-link-item ${activeClass}" style="background:#f7f3ea;" onclick="event.preventDefault(); navigateTo('${dongTarget}')">${dong} 출장마사지 ➔</a>`;
         });
         cardHtml += `</div></div>`;
       }

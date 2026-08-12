@@ -1,50 +1,90 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <!-- 메인 페이지 -->
+  <!-- 전체 메인 -->
   <url>
     <loc>https://gunmamong.shop/</loc>
-    <lastmod>2026-08-10</lastmod>
-    <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
-  
-  <!-- 광역 페이지 -->
-  <url>
-    <loc>https://gunmamong.shop/?page=seoul</loc>
-    <lastmod>2026-08-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://gunmamong.shop/?page=gyeonggi</loc>
-    <lastmod>2026-08-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://gunmamong.shop/?page=incheon</loc>
-    <lastmod>2026-08-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://gunmamong.shop/?page=cheonan</loc>
-    <lastmod>2026-08-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
 
-  <!-- 세부 주요 구/시 예시 -->
-  <url>
-    <loc>https://gunmamong.shop/?page=seoul-gangnam</loc>
-    <lastmod>2026-08-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://gunmamong.shop/?page=gyeonggi-suwon</loc>
-    <lastmod>2026-08-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
+  <!-- 1차 광역 시/도 -->
+  <url><loc>https://gunmamong.shop/?page=seoul</loc><priority>0.9</priority></url>
+  <url><loc>https://gunmamong.shop/?page=gyeonggi</loc><priority>0.9</priority></url>
+  <url><loc>https://gunmamong.shop/?page=incheon</loc><priority>0.9</priority></url>
+  <url><loc>https://gunmamong.shop/?page=cheonan</loc><priority>0.9</priority></url>
+
+  <!-- 서울특별시 구별 -->
+  <url><loc>https://gunmamong.shop/?page=seoul-gangnam</loc><priority>0.8</priority></url>
+  <url><loc>https://gunmamong.shop/?page=seoul-seocho</loc><priority>0.8</priority></url>
+  <url><loc>https://gunmamong.shop/?page=seoul-songpa</loc><priority>0.8</priority></url>
+  <url><loc>https://gunmamong.shop/?page=seoul-gangdong</loc><priority>0.8</priority></url>
+  <url><loc>https://gunmamong.shop/?page=seoul-mapo</loc><priority>0.8</priority></url>
+  <url><loc>https://gunmamong.shop/?page=seoul-yeongdeungpo</loc><priority>0.8</priority></url>
+  <url><loc>https://gunmamong.shop/?page=seoul-yongsan</loc><priority>0.8</priority></url>
+  <url><loc>https://gunmamong.shop/?page=seoul-seongdong</loc><priority>0.8</priority></url>
+  <url><loc>https://gunmamong.shop/?page=seoul-gwangjin</loc><priority>0.8</priority></url>
+  <url><loc>https://gunmamong.shop/?page=seoul-dongdaemun</loc><priority>0.8</priority></url>
+  <url><loc>https://gunmamong.shop/?page=seoul-jungnang</loc><priority>0.8</priority></url>
+  <url><loc>https://gunmamong.shop/?page=seoul-seongbuk</loc><priority>0.8</priority></url>
+  <url><loc>https://gunmamong.shop/?page=seoul-gangbuk</loc><priority>0.8</priority></url>
+  <url><loc>https://gunmamong.shop/?page=seoul-dobong</loc><priority>0.8</priority></url>
+  <url><loc>https://gunmamong.shop/?page=seoul-nowon</loc><priority>0.8</priority></url>
+  <url><loc>https://gunmamong.shop/?page=seoul-eunpyeong</loc><priority>0.8</priority></url>
+  <url><loc>https://gunmamong.shop/?page=seoul-seodaemun</loc><priority>0.8</priority></url>
+  <url><loc>https://gunmamong.shop/?page=seoul-jongno</loc><priority>0.8</priority></url>
+  <url><loc>https://gunmamong.shop/?page=seoul-junggu</loc><priority>0.8</priority></url>
+  <url><loc>https://gunmamong.shop/?page=seoul-gangseo</loc><priority>0.8</priority></url>
+  <url><loc>https://gunmamong.shop/?page=seoul-yangcheon</loc><priority>0.8</priority></url>
+  <url><loc>https://gunmamong.shop/?page=seoul-guro</loc><priority>0.8</priority></url>
+  <url><loc>https://gunmamong.shop/?page=seoul-geumcheon</loc><priority>0.8</priority></url>
+  <url><loc>https://gunmamong.shop/?page=seoul-gwanak</loc><priority>0.8</priority></url>
+  <url><loc>https://gunmamong.shop/?page=seoul-dongjak</loc><priority>0.8</priority></url>
+
+  <!-- 서울특별시 주요 동별 -->
+  <url><loc>https://gunmamong.shop/?page=seoul-gangnam-%EC%97%AD%EC%82%BC%EB%8F%99</loc><priority>0.7</priority></url>
+  <url><loc>https://gunmamong.shop/?page=seoul-gangnam-%EB%85%BC%ED%98%84%EB%8F%99</loc><priority>0.7</priority></url>
+  <url><loc>https://gunmamong.shop/?page=seoul-gangnam-%EC%82%BC%EC%84%B1%EB%8F%99</loc><priority>0.7</priority></url>
+  <url><loc>https://gunmamong.shop/?page=seoul-gangnam-%EC%B2%AD%EB%8B%B4%EB%8F%99</loc><priority>0.7</priority></url>
+  <url><loc>https://gunmamong.shop/?page=seoul-gangnam-%EC%8B%A0%EC%82%AC%EB%8F%99</loc><priority>0.7</priority></url>
+  <url><loc>https://gunmamong.shop/?page=seoul-gangnam-%EB%8C%80%EC%B9%98%EB%8F%99</loc><priority>0.7</priority></url>
+  <url><loc>https://gunmamong.shop/?page=seoul-seocho-%EC%84%9C%EC%B0%88%EB%8F%99</loc><priority>0.7</priority></url>
+  <url><loc>https://gunmamong.shop/?page=seoul-seocho-%EB%B0%98%ED%8F%AC%EB%8F%99</loc><priority>0.7</priority></url>
+  <url><loc>https://gunmamong.shop/?page=seoul-seocho-%EB%B0%A9%EB%B0%B0%EB%8F%99</loc><priority>0.7</priority></url>
+  <url><loc>https://gunmamong.shop/?page=seoul-songpa-%EC%9E%A0%EC%8B%A4%EB%8F%99</loc><priority>0.7</priority></url>
+  <url><loc>https://gunmamong.shop/?page=seoul-mapo-%EC%84%9C%EA%B5%90%EB%8F%99</loc><priority>0.7</priority></url>
+
+  <!-- 경기도 시/구별 -->
+  <url><loc>https://gunmamong.shop/?page=gyeonggi-suwon</loc><priority>0.8</priority></url>
+  <url><loc>https://gunmamong.shop/?page=gyeonggi-seongnam</loc><priority>0.8</priority></url>
+  <url><loc>https://gunmamong.shop/?page=gyeonggi-uijeongbu</loc><priority>0.8</priority></url>
+  <url><loc>https://gunmamong.shop/?page=gyeonggi-anyang</loc><priority>0.8</priority></url>
+  <url><loc>https://gunmamong.shop/?page=gyeonggi-bucheon</loc><priority>0.8</priority></url>
+  <url><loc>https://gunmamong.shop/?page=gyeonggi-gwangmyeong</loc><priority>0.8</priority></url>
+  <url><loc>https://gunmamong.shop/?page=gyeonggi-pyeongtaek</loc><priority>0.8</priority></url>
+  <url><loc>https://gunmamong.shop/?page=gyeonggi-ansan</loc><priority>0.8</priority></url>
+  <url><loc>https://gunmamong.shop/?page=gyeonggi-goyang</loc><priority>0.8</priority></url>
+  <url><loc>https://gunmamong.shop/?page=gyeonggi-namyangju</loc><priority>0.8</priority></url>
+  <url><loc>https://gunmamong.shop/?page=gyeonggi-siheung</loc><priority>0.8</priority></url>
+  <url><loc>https://gunmamong.shop/?page=gyeonggi-yongin</loc><priority>0.8</priority></url>
+  <url><loc>https://gunmamong.shop/?page=gyeonggi-paju</loc><priority>0.8</priority></url>
+  <url><loc>https://gunmamong.shop/?page=gyeonggi-gimpo</loc><priority>0.8</priority></url>
+  <url><loc>https://gunmamong.shop/?page=gyeonggi-hwaseong</loc><priority>0.8</priority></url>
+
+  <!-- 경기도 주요 동별 -->
+  <url><loc>https://gunmamong.shop/?page=gyeonggi-suwon-%EC%9D%B8%EA%B3%84%EB%8F%99</loc><priority>0.7</priority></url>
+  <url><loc>https://gunmamong.shop/?page=gyeonggi-suwon-%EC%98%81%ED%86%B5%EB%8F%99</loc><priority>0.7</priority></url>
+  <url><loc>https://gunmamong.shop/?page=gyeonggi-bucheon-%EC%A4%91%EB%8F%99</loc><priority>0.7</priority></url>
+  <url><loc>https://gunmamong.shop/?page=gyeonggi-bucheon-%EC%83%81%EB%8F%99</loc><priority>0.7</priority></url>
+  <url><loc>https://gunmamong.shop/?page=gyeonggi-ansan-%EA%B3%A0%EC%9E%94%EB%8F%99</loc><priority>0.7</priority></url>
+
+  <!-- 인천광역시 구별 -->
+  <url><loc>https://gunmamong.shop/?page=incheon-yeonsu</loc><priority>0.8</priority></url>
+  <url><loc>https://gunmamong.shop/?page=incheon-bupyeong</loc><priority>0.8</priority></url>
+  <url><loc>https://gunmamong.shop/?page=incheon-seogu</loc><priority>0.8</priority></url>
+  <url><loc>https://gunmamong.shop/?page=incheon-namdong</loc><priority>0.8</priority></url>
+
+  <!-- 천안시 구별 -->
+  <url><loc>https://gunmamong.shop/?page=cheonan-seobuk</loc><priority>0.8</priority></url>
+  <url><loc>https://gunmamong.shop/?page=cheonan-dongnam</loc><priority>0.8</priority></url>
+  <url><loc>https://gunmamong.shop/?page=cheonan-seobuk-%EB%90%90%EC%A0%95%EB%8F%99</loc><priority>0.7</priority></url>
+  <url><loc>https://gunmamong.shop/?page=cheonan-seobuk-%EB%B6%88%EB%8B%B9%EB%8F%99</loc><priority>0.7</priority></url>
 </urlset>
