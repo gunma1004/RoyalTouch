@@ -3,94 +3,122 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>홈케어라운지 | 24시간 프리미엄 방문 힐링 테라피 플랫폼</title>
+  <title>홈케어라운지 | 프리미엄 방문 힐링 테라피</title>
   <style>
-    /* 기존 스타일 그대로 유지 */
-    #homecare-page { width: 100% !important; background: #f7f3ea !important; padding-bottom: 50px; font-family: -apple-system, sans-serif !important; }
-    .hcl-container { width: 100% !important; max-width: 1180px !important; margin: 0 auto !important; padding: 0 20px !important; }
-    .hcl-main-banner-img { width: 100% !important; max-height: 380px !important; object-fit: cover !important; border-radius: 20px !important; display: block !important; margin-bottom: 30px; }
-    .hcl-shop-card { background: #fff !important; border-radius: 24px !important; padding: 24px !important; display: flex !important; align-items: center !important; gap: 24px !important; margin-bottom: 20px !important; border: 1px solid rgba(0,0,0,0.1) !important; }
-    .hcl-shop-img { width: 170px !important; height: 170px !important; min-width: 170px !important; border-radius: 16px !important; object-fit: cover !important; }
+    :root { --primary: #1f486d; --accent: #d8a85f; --bg: #fdfcf9; }
+    body { margin: 0; background-color: var(--bg); font-family: 'Pretendard', -apple-system, sans-serif; color: #333; }
+    .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
     
-    .hcl-tabs { display: flex; justify-content: center; gap: 10px; margin: 30px 0; flex-wrap: wrap; }
-    .hcl-tab { padding: 10px 20px; cursor: pointer; border: 1px solid #ddd; border-radius: 20px; background: #fff; font-weight: bold; text-decoration: none; color: #333; }
-    .hcl-tab.active { background: #1f486d; color: #fff; border-color: #1f486d; }
-    .hcl-links-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 20px; }
+    /* 헤더 */
+    header { background: #fff; padding: 20px 0; box-shadow: 0 2px 10px rgba(0,0,0,0.05); text-align: center; }
+    .logo { font-size: 28px; font-weight: 800; color: var(--primary); letter-spacing: -1px; }
+
+    /* 배너 */
+    .banner { margin: 30px 0; }
+    .banner img { width: 100%; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.15); display: block; }
+
+    /* 지역 탭 */
+    .tabs { display: flex; justify-content: center; gap: 10px; margin-bottom: 20px; flex-wrap: wrap; }
+    .tab-btn { padding: 12px 24px; border: none; border-radius: 50px; background: #eee; cursor: pointer; font-weight: 600; transition: 0.3s; }
+    .tab-btn.active { background: var(--primary); color: #fff; }
+
+    /* 업체 카드 */
+    .shop-list { display: grid; grid-template-columns: 1fr; gap: 20px; margin-bottom: 50px; }
+    .shop-card { background: #fff; border-radius: 20px; padding: 20px; display: flex; align-items: center; gap: 20px; border: 1px solid #eee; transition: transform 0.3s; }
+    .shop-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+    .shop-img { width: 120px; height: 120px; min-width: 120px; border-radius: 15px; object-fit: cover; }
+    .shop-info h3 { margin: 0 0 5px 0; font-size: 18px; color: var(--primary); }
+    .shop-info p { font-size: 14px; color: #777; margin-bottom: 10px; }
+    .call-btn { display: inline-block; padding: 8px 16px; background: var(--primary); color: #fff; border-radius: 8px; font-size: 14px; font-weight: bold; text-decoration: none; }
   </style>
 </head>
 <body>
 
-<div id="homecare-page">
-  <section class="hcl-container" style="padding-top: 40px;">
-    <img src="/images/banner.jpg" alt="홈케어라운지 메인 배너" class="hcl-main-banner-img">
+<header>
+  <div class="container"><div class="logo">홈케어라운지</div></div>
+</header>
+
+<div class="container">
+  <section class="banner">
+    <img src="/images/banner.jpg" alt="프리미엄 힐링">
   </section>
 
-  <!-- 지역 선택 탭 -->
-  <section class="hcl-container">
-    <div class="hcl-tabs">
-      <button class="hcl-tab active" onclick="switchRegion('seoul', this)">서울특별시</button>
-      <button class="hcl-tab" onclick="switchRegion('gyeonggi', this)">경기도</button>
-      <button class="hcl-tab" onclick="switchRegion('incheon', this)">인천광역시</button>
-      <button class="hcl-tab" onclick="switchRegion('cheonan', this)">천안시</button>
+  <section>
+    <h2 style="text-align:center;">지역별 서비스 선택</h2>
+    <div class="tabs">
+      <button class="tab-btn active" onclick="switchRegion('seoul', this)">서울특별시</button>
+      <button class="tab-btn" onclick="switchRegion('gyeonggi', this)">경기도</button>
+      <button class="tab-btn" onclick="switchRegion('incheon', this)">인천광역시</button>
+      <button class="tab-btn" onclick="switchRegion('cheonan', this)">천안시</button>
     </div>
-    <div id="subregion-container" class="hcl-links-grid"></div>
+    <div id="subregion-container" style="display:flex; flex-wrap:wrap; justify-content:center; gap:10px;"></div>
   </section>
 
-  <section class="hcl-container">
-    <h2 style="text-align:center; margin:40px 0 20px;">수도권 대표 제휴 업체</h2>
-    <div id="shop-list-container"></div>
-  </section>
+  <h2 style="margin-top:50px; text-align:center;">오늘의 추천 업체</h2>
+  <div class="shop-list" id="shop-list"></div>
 </div>
 
 <script>
-  // 1. 지역 데이터
+  // 🌟 서울, 경기, 인천, 천안 전체 지역 데이터 완벽 반영
   const regionData = {
     seoul: [
-      {n:"강남구", k:"seoul-gangnam"}, {n:"도봉구", k:"seoul-dobong"}, {n:"동작구", k:"seoul-dongjak"}
-      /* 나머지 서울 지역 추가 가능 */
+      {n:"강남구", k:"seoul-gangnam"}, {n:"강동구", k:"seoul-gangdong"}, {n:"강북구", k:"seoul-gangbuk"},
+      {n:"강서구", k:"seoul-gangseo"}, {n:"관악구", k:"seoul-gwanak"}, {n:"광진구", k:"seoul-gwangjin"},
+      {n:"구로구", k:"seoul-guro"}, {n:"금천구", k:"seoul-geumcheon"}, {n:"노원구", k:"seoul-nowon"},
+      {n:"도봉구", k:"seoul-dobong"}, {n:"동대문구", k:"seoul-dongdaemun"}, {n:"동작구", k:"seoul-dongjak"},
+      {n:"마포구", k:"seoul-mapo"}, {n:"서대문구", k:"seoul-seodaemun"}, {n:"서초구", k:"seoul-seocho"},
+      {n:"성동구", k:"seoul-seongdong"}, {n:"성북구", k:"seoul-seongbuk"}, {n:"송파구", k:"seoul-songpa"},
+      {n:"양천구", k:"seoul-yangcheon"}, {n:"영등포구", k:"seoul-yeongdeungpo"}, {n:"용산구", k:"seoul-yongsan"},
+      {n:"은평구", k:"seoul-eunpyeong"}, {n:"종로구", k:"seoul-jongno"}, {n:"중구", k:"seoul-junggu"},
+      {n:"중랑구", k:"seoul-jungnang"}
     ],
     gyeonggi: [
-      {n:"안산시", k:"gyeonggi-ansan"}, {n:"수원시", k:"gyeonggi-suwon"}
+      {n:"안산시", k:"gyeonggi-ansan"}, {n:"부천시", k:"gyeonggi-bucheon"}, {n:"김포시", k:"gyeonggi-gimpo"},
+      {n:"고양시", k:"gyeonggi-goyang"}, {n:"화성시", k:"gyeonggi-hwaseong"}, {n:"평택시", k:"gyeonggi-pyeongtaek"},
+      {n:"성남시", k:"gyeonggi-seongnam"}, {n:"시흥시", k:"gyeonggi-siheung"}, {n:"수원시", k:"gyeonggi-suwon"},
+      {n:"용인시", k:"gyeonggi-yongin"}
     ],
-    incheon: [{n:"부평구", k:"incheon-bupyeong"}],
-    cheonan: [{n:"천안시", k:"cheonan"}]
+    incheon: [
+      {n:"부평구", k:"incheon-bupyeong"}, {n:"동구", k:"incheon-donggu"}, {n:"계양구", k:"incheon-gyeyang"},
+      {n:"중구", k:"incheon-junggu"}, {n:"미추홀구", k:"incheon-michuhol"}, {n:"남동구", k:"incheon-namdong"},
+      {n:"서구", k:"incheon-seogu"}, {n:"연수구", k:"incheon-yeonsu"}
+    ],
+    cheonan: [
+      {n:"천안시", k:"cheonan"}
+    ]
   };
 
-  // 2. 지역 전환 함수
   function switchRegion(reg, el) {
-    document.querySelectorAll('.hcl-tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(t => t.classList.remove('active'));
     el.classList.add('active');
     document.getElementById('subregion-container').innerHTML = regionData[reg].map(item => 
-      `<a href="/${item.k}/" style="padding:10px 16px; background:#fff; border:1px solid #1f486d; border-radius:8px; color:#1f486d; font-size:14px; font-weight:600; text-decoration:none;">${item.n} ➔</a>`
+      `<a href="/${item.k}/" style="padding:10px 20px; background:#fff; border:1px solid var(--primary); border-radius:10px; color:var(--primary); text-decoration:none; font-weight:600;">${item.n} ➔</a>`
     ).join('');
   }
 
-  // 3. 업체 리스트 데이터
-  const shopsData = [
-    { name: "한국미인홈케어", phone: "0507-1280-3288", badge: "추천업체", desc: "24시 정성 가득한 타이 & 아로마 전문 케어", img: "/images/shop1.jpg" },
-    { name: "젊은애인홈타이", phone: "0507-1280-3183", badge: "인기폭발", desc: "지친 일상에 편안한 휴식을 선사하는 테라피", img: "/images/shop2.jpg" },
-    { name: "그녀의온도홈타이", phone: "0507-1280-3245", badge: "24시상시", desc: "빠른 방문과 철저한 위생 관리를 약속드립니다", img: "/images/shop3.jpg" },
-    { name: "젊은미녀홈타이", phone: "0507-1280-3180", badge: "신규제휴", desc: "베테랑 관리사의 맞춤형 피로 회복 케어", img: "/images/shop4.jpg" },
-    { name: "지금될까홈타이", phone: "0507-1280-3228", badge: "만족도1위", desc: "후불제 안심 이용, 25분 내 빠른 도착", img: "/images/shop5.jpg" }
+  const shops = [
+    { name: "한국미인홈케어", badge: "추천", desc: "정성 가득한 타이&아로마 전문 케어", img: "/images/shop1.jpg", phone: "0507-1280-3288" },
+    { name: "젊은애인홈타이", badge: "인기", desc: "지친 일상에 편안한 휴식을 선사하는 테라피", img: "/images/shop2.jpg", phone: "0507-1280-3183" },
+    { name: "그녀의온도홈타이", badge: "상시", desc: "빠른 방문과 철저한 위생 관리를 약속드립니다", img: "/images/shop3.jpg", phone: "0507-1280-3245" },
+    { name: "젊은미녀홈타이", badge: "신규", desc: "베테랑 관리사의 맞춤형 피로회복 케어", img: "/images/shop4.jpg", phone: "0507-1280-3180" },
+    { name: "지금될까홈타이", badge: "1위", desc: "후불제 안심 이용, 25분 내 빠른 도착", img: "/images/shop5.jpg", phone: "0507-1280-3228" }
   ];
 
   window.onload = function() {
-    const shopContainer = document.getElementById('shop-list-container');
-    shopsData.forEach(shop => {
-      shopContainer.innerHTML += `
-        <div class="hcl-shop-card">
-          <img src="${shop.img}" class="hcl-shop-img">
-          <div class="hcl-shop-info">
-            <span style="background:#d8a85f; color:#fff; padding:2px 8px; border-radius:4px; font-size:12px;">${shop.badge}</span>
-            <h3 style="margin:8px 0;">${shop.name}</h3>
-            <p style="font-size:14px; color:#666;">${shop.desc}</p>
-            <div style="font-weight:bold; color:#1f486d; font-size:16px;">📞 ${shop.phone}</div>
-            <a href="tel:${shop.phone}" style="display:inline-block; margin-top:5px; color:#1f486d; font-weight:bold;">전화 연결</a>
+    const list = document.getElementById('shop-list');
+    shops.forEach(s => {
+      list.innerHTML += `
+        <div class="shop-card">
+          <img src="${s.img}" class="shop-img">
+          <div class="shop-info">
+            <small style="color:var(--accent); font-weight:bold;">${s.badge}</small>
+            <h3>${s.name}</h3>
+            <p>${s.desc}</p>
+            <a href="tel:${s.phone}" class="call-btn">📞 ${s.phone}</a>
           </div>
         </div>`;
     });
-    // 초기 실행
-    switchRegion('seoul', document.querySelector('.hcl-tab'));
+    switchRegion('seoul', document.querySelector('.tab-btn'));
   };
 </script>
 </body>
