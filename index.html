@@ -113,7 +113,17 @@
     });
     
     // 지역 탭 로드
-    switchRegion('seoul', document.querySelector('.hcl-tab'));
+    <section class="hcl-container">
+  <div class="hcl-tabs">
+    <!-- 링크(href)를 실제 폴더 경로에 맞게 수정하세요 -->
+    <a href="/" class="hcl-tab">전체 메인</a>
+    <a href="/seoul/" class="hcl-tab">서울특별시</a>
+    <a href="/gyeonggi/" class="hcl-tab">경기도</a>
+    <a href="/incheon/" class="hcl-tab">인천광역시</a>
+    <a href="/cheonan/" class="hcl-tab">천안시</a>
+  </div>
+  <div id="subregion-container" class="hcl-links-grid"></div>
+</section>
   };
 </script>
 </body>
