@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>경기도 출장마사지 홈타이 | 경기 17개 시·군 24시 방문케어 총정리</title>
+  <meta name="description" content="수원, 성남, 고양, 화성, 용인 등 경기도 17개 핵심 도시 전 지역 자택 및 오피스텔로 직접 찾아가는 프리미엄 24시 출장마사지·홈타이 안내 플랫폼.">
+  <meta name="keywords" content="경기도출장마사지, 경기홈타이, 수원출장안마, 성남출장마사지, 화성홈타이, 경기출장안마, 홈케어라운지">
+  <link rel="canonical" href="https://homecarelounge.shop/gyeonggi/">
+  <style>
+    /* 공통 스타일은 메인 페이지와 동일하게 적용 */
+    #homecare-lounge-page { background: #f7f3ea; }
+    .hcl-container { max-width: 1180px; margin: 0 auto; padding: 40px 20px; }
+    .hcl-nav-bar { background: #1f486d; color: #fff; padding: 14px 0; }
+    .hcl-section-title { font-size: 36px; font-weight: 900; color: #172236; text-align: center; margin-bottom: 30px; }
+    .hcl-links-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 15px; }
+    .hcl-link-item { background: #fff; color: #1f486d; border: 1px solid rgba(31, 72, 109, 0.2); padding: 15px; border-radius: 12px; font-weight: 700; text-align: center; display: block; }
+    .hcl-link-item:hover { background: #1f486d; color: #fff; }
+  </style>
+</head>
+<body>
+<div id="homecare-lounge-page">
+  <header class="hcl-nav-bar"><div class="hcl-container"><h2>홈케어라운지 | 경기도 지역 안내</h2></div></header>
+  <main class="hcl-container">
+    <h1 class="hcl-section-title">경기도 지역별 서비스</h1>
+    <div class="hcl-links-grid" id="region-list"></div>
+  </main>
+</div>
+<script>
+  const cities = [
+    {n:"수원시", k:"gyeonggi-suwon"}, {n:"성남시", k:"gyeonggi-seongnam"}, {n:"고양시", k:"gyeonggi-goyang"},
+    {n:"용인시", k:"gyeonggi-yongin"}, {n:"화성시", k:"gyeonggi-hwaseong"}, {n:"안산시", k:"gyeonggi-ansan"},
+    {n:"부천시", k:"gyeonggi-bucheon"}, {n:"평택시", k:"gyeonggi-pyeongtaek"}, {n:"시흥시", k:"gyeonggi-siheung"},
+    {n:"김포시", k:"gyeonggi-gimpo"}, {n:"파주시", k:"gyeonggi-paju"}, {n:"광주시", k:"gyeonggi-gwangju"},
+    {n:"하남시", k:"gyeonggi-hanam"}, {n:"광명시", k:"gyeonggi-gwangmyeong"}, {n:"군포시", k:"gyeonggi-gunpo"},
+    {n:"안양시", k:"gyeonggi-anyang"}, {n:"의정부시", k:"gyeonggi-uijeongbu"}
+  ];
+  const list = document.getElementById('region-list');
+  cities.forEach(c => {
+    list.innerHTML += `<a href="/${c.k}/" class="hcl-link-item">${c.n} 홈케어 ➔</a>`;
+  });
+</script>
+</body>
+</html>
