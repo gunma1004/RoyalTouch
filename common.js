@@ -65,7 +65,7 @@ function switchRegion(reg, el) {
         });
       }
       
-      const smsText = encodeURIComponent(`안녕하세요. 홈케어라운지 보고 [${locLabel} 출장마사지] 예약 문의드립니다.`);
+      const smsText = encodeURIComponent(`안녕하세요. 로얄터치 보고 [${locLabel} 출장마사지] 예약 문의드립니다.`);
       shopContainer.innerHTML += `
         <div class="hcl-shop-card">
           <img src="${shop.img}" alt="${shop.name}" class="hcl-shop-img">
