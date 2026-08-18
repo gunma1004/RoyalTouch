@@ -58,14 +58,33 @@
     .hcl-shop-phone-num { font-size: 16px !important; font-weight: 900 !important; color: #172236 !important; margin-bottom: 4px !important; }
     .hcl-btn-call { background: linear-gradient(135deg, #1f486d, #172236) !important; color: #fff !important; padding: 12px 18px !important; border-radius: 10px !important; font-size: 14px !important; font-weight: 900 !important; display: inline-flex !important; justify-content: center !important; width: 100% !important; }
     .hcl-btn-sms { background: #FFE921 !important; color: #172236 !important; padding: 11px 18px !important; border-radius: 10px !important; font-size: 14px !important; font-weight: 900 !important; display: inline-flex !important; justify-content: center !important; width: 100% !important; border: 1px solid rgba(0,0,0,0.1) !important; }
-    .hcl-region-box { padding: 40px 0 !important; background: #fff !important; border-top: 1px solid rgba(31, 72, 109, 0.08) !important; border-bottom: 1px solid rgba(31, 72, 109, 0.08) !important; }
+    
+    /* Q&A 및 후기 스타일 */
+    .hcl-info-section { padding: 40px 0 !important; background: #fff !important; border-top: 1px solid rgba(31, 72, 109, 0.08) !important; }
+    .hcl-grid-2 { display: grid !important; grid-template-columns: 1fr 1fr !important; gap: 30px !important; margin-top: 30px !important; }
+    .hcl-box-card { background: #fdfcf9 !important; border-radius: 20px !important; padding: 24px !important; border: 1px solid rgba(31, 72, 109, 0.1) !important; box-shadow: 0 10px 25px rgba(0,0,0,0.03) !important; }
+    .hcl-box-title { font-size: 18px !important; font-weight: 900 !important; color: #172236 !important; margin-bottom: 16px !important; display: flex !important; align-items: center !important; gap: 8px !important; }
+    .hcl-qna-item { margin-bottom: 16px !important; }
+    .hcl-qna-item:last-child { margin-bottom: 0 !important; }
+    .hcl-q { font-size: 14.5px !important; font-weight: 850 !important; color: #1f486d !important; margin-bottom: 4px !important; }
+    .hcl-a { font-size: 14px !important; color: #596579 !important; line-height: 1.6 !important; margin: 0 !important; }
+    .hcl-review-item { padding: 12px 0 !important; border-bottom: 1px dashed rgba(0,0,0,0.08) !important; }
+    .hcl-review-item:last-child { border-bottom: none !important; padding-bottom: 0 !important; }
+    .hcl-review-header { display: flex !important; justify-content: space-between !important; font-size: 13px !important; color: #888 !important; margin-bottom: 4px !important; }
+    .hcl-review-text { font-size: 14px !important; color: #333 !important; margin: 0 !important; line-height: 1.5 !important; }
+
+    .hcl-region-box { padding: 40px 0 !important; background: #f7f3ea !important; border-top: 1px solid rgba(31, 72, 109, 0.08) !important; }
     .hcl-tabs { display: flex !important; justify-content: center !important; gap: 10px !important; margin-bottom: 20px !important; flex-wrap: wrap !important; }
-    .hcl-tab { padding: 10px 22px !important; border-radius: 999px !important; background: #f7f3ea !important; color: #1f486d !important; font-weight: 850 !important; font-size: 15px !important; border: 1px solid rgba(31, 72, 109, 0.15) !important; cursor: pointer !important; }
+    .hcl-tab { padding: 10px 22px !important; border-radius: 999px !important; background: #fff !important; color: #1f486d !important; font-weight: 850 !important; font-size: 15px !important; border: 1px solid rgba(31, 72, 109, 0.15) !important; cursor: pointer !important; }
     .hcl-tab.active { background: #1f486d !important; color: #fff !important; border-color: #1f486d !important; }
     .hcl-links-grid { display: flex !important; flex-wrap: wrap !important; justify-content: center !important; gap: 8px !important; margin-top: 15px !important; }
     .hcl-link-item { background: #fff !important; color: #1f486d !important; border: 1px solid rgba(31, 72, 109, 0.2) !important; padding: 8px 14px !important; border-radius: 8px !important; font-size: 13.5px !important; font-weight: 700 !important; text-decoration: none !important; display: inline-block !important; }
     .hcl-link-item:hover { background: #1f486d !important; color: #fff !important; }
     .hcl-footer { background: #222 !important; color: #999 !important; padding: 40px 0 !important; text-align: center !important; font-size: 13px !important; line-height: 1.8 !important; }
+
+    @media(max-width: 900px) {
+      .hcl-grid-2 { grid-template-columns: 1fr !important; }
+    }
   </style>
 </head>
 <body>
@@ -98,10 +117,10 @@
     </div>
   </section>
 
-  <!-- 🌟 강남구 구글 지도 영역 추가 -->
+  <!-- 📍 강남구 구글 지도 영역 -->
   <section class="hcl-container" style="margin: 40px auto;">
     <div style="background:#fff; border-radius:24px; padding:24px; border:1px solid rgba(31, 72, 109, 0.12); box-shadow: 0 14px 32px rgba(31, 72, 109, 0.06);">
-      <h3 style="margin-top:0; color:#172236; font-size:20px; text-align:center; margin-bottom:15px; font-weight:900;">📍 서울특별시 강남구 방문 서비스 지역 안내</h3>
+      <h3 style="margin-top:0; color:#172236; font-size:20px; text-align:center; margin-bottom:10px; font-weight:900;">📍 서울특별시 강남구 방문 서비스 지역 안내</h3>
       <p style="text-align:center; color:#596579; font-size:14px; margin-bottom:20px;">역삼동, 논현동, 삼성동, 청담동, 신사동 등 강남구 전 지역 자택·호텔·오피스텔 25분 내 신속 방문</p>
       <div style="width:100%; height:380px; border-radius:16px; overflow:hidden; border:1px solid rgba(0,0,0,0.08);">
         <iframe 
@@ -112,6 +131,67 @@
           allowfullscreen 
           src="https://maps.google.com/maps?q=서울특별시+강남구&output=embed&hl=ko">
         </iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- ❓ Q&A 및 💬 이용 후기 영역 -->
+  <section class="hcl-info-section">
+    <div class="hcl-container">
+      <div style="text-align:center;">
+        <span class="hcl-eyebrow">COMMUNITY & HELP</span>
+        <h2 class="hcl-section-title">자주 묻는 질문 및 생생한 이용 후기</h2>
+      </div>
+
+      <div class="hcl-grid-2">
+        <!-- Q&A 박스 -->
+        <div class="hcl-box-card">
+          <div class="hcl-box-title">❓ 자주 묻는 질문 (Q&A)</div>
+          
+          <div class="hcl-qna-item">
+            <div class="hcl-q">Q. 강남구 어디까지 25분 내 방문이 가능한가요?</div>
+            <p class="hcl-a">역삼동, 논현동, 삼성동, 청담동, 신사동, 대치동 등 강남구 전 지역 오피스텔 및 호텔, 자택 어디든 전담 관리사가 배치되어 있어 신속하게 방문합니다.</p>
+          </div>
+
+          <div class="hcl-qna-item">
+            <div class="hcl-q">Q. 이용 요금은 선불인가요, 후불인가요?</div>
+            <p class="hcl-a">고객님의 안전과 편의를 위해 100% 후불제로 안심하고 이용하실 수 있습니다. 관리사 도착 후 결제가 진행됩니다.</p>
+          </div>
+
+          <div class="hcl-qna-item">
+            <div class="hcl-q">Q. 준비해야 할 별도의 용품이 있나요?</div>
+            <p class="hcl-a">전혀 없습니다. 전문 테라피스트가 최고급 오일과 매트 등 필요한 모든 용품을 직접 챙겨서 방문하므로 편안하게 대기해 주시면 됩니다.</p>
+          </div>
+        </div>
+
+        <!-- 이용 후기 박스 -->
+        <div class="hcl-box-card">
+          <div class="hcl-box-title">💬 실시간 베스트 이용 후기</div>
+          
+          <div class="hcl-review-item">
+            <div class="hcl-review-header">
+              <span><strong>역삼동 오피스텔</strong> (김** 고객님)</span>
+              <span>⭐ 5.0 / 2시간 전</span>
+            </div>
+            <p class="hcl-review-text">야근 끝나고 지친 몸으로 예약했는데 정말 25분 만에 오셨네요! 손길이 야무지셔서 피로가 싹 풀렸습니다. 자주 이용할게요.</p>
+          </div>
+
+          <div class="hcl-review-item">
+            <div class="hcl-review-header">
+              <span><strong>청담동 호텔</strong> (이** 고객님)</span>
+              <span>⭐ 5.0 / 어제</span>
+            </div>
+            <p class="hcl-review-text">출장 차 강남 숙소에 머물렀는데 호텔 안까지 깔끔하게 방문해 주셔서 너무 편했습니다. 관리사분 실력이 대단하시네요.</p>
+          </div>
+
+          <div class="hcl-review-item">
+            <div class="hcl-review-header">
+              <span><strong>논현동 자택</strong> (박** 고객님)</span>
+              <span>⭐ 5.0 / 3일 전</span>
+            </div>
+            <p class="hcl-review-text">후불제라 믿고 이용해 봤는데 응대도 친절하시고 시간 약속도 칼같이 지켜주셔서 대만족입니다. 번창하세요!</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
