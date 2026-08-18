@@ -2,66 +2,66 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <!-- 전체 메인 -->
   <url>
-    <loc>https://homecarelounge.shop/</loc>
+    <loc>https://royaltouch-service.netlify.app/</loc>
     <priority>1.0</priority>
   </url>
 
   <!-- 1차 광역 시/도 -->
-  <url><loc>https://homecarelounge.shop/gyeonggi/</loc><priority>0.9</priority></url>
-  <url><loc>https://homecarelounge.shop/incheon/</loc><priority>0.9</priority></url>
-  <url><loc>https://homecarelounge.shop/cheonan/</loc><priority>0.9</priority></url>
+  <url><loc>https://royaltouch-service.netlify.app/gyeonggi/</loc><priority>0.9</priority></url>
+  <url><loc>https://royaltouch-service.netlify.app/incheon/</loc><priority>0.9</priority></url>
+  <url><loc>https://royaltouch-service.netlify.app/cheonan/</loc><priority>0.9</priority></url>
 
   <!-- 서울특별시 구별 정적 주소 -->
-  <url><loc>https://homecarelounge.shop/seoul-gangnam/</loc><priority>0.8</priority></url>
-  <url><loc>https://homecarelounge.shop/seoul-seocho/</loc><priority>0.8</priority></url>
-  <url><loc>https://homecarelounge.shop/seoul-songpa/</loc><priority>0.8</priority></url>
-  <url><loc>https://homecarelounge.shop/seoul-gangdong/</loc><priority>0.8</priority></url>
-  <url><loc>https://homecarelounge.shop/seoul-mapo/</loc><priority>0.8</priority></url>
-  <url><loc>https://homecarelounge.shop/seoul-yeongdeungpo/</loc><priority>0.8</priority></url>
-  <url><loc>https://homecarelounge.shop/seoul-yongsan/</loc><priority>0.8</priority></url>
-  <url><loc>https://homecarelounge.shop/seoul-seongdong/</loc><priority>0.8</priority></url>
-  <url><loc>https://homecarelounge.shop/seoul-gwangjin/</loc><priority>0.8</priority></url>
-  <url><loc>https://homecarelounge.shop/seoul-dongdaemun/</loc><priority>0.8</priority></url>
-  <url><loc>https://homecarelounge.shop/seoul-jungnang/</loc><priority>0.8</priority></url>
-  <url><loc>https://homecarelounge.shop/seoul-seongbuk/</loc><priority>0.8</priority></url>
-  <url><loc>https://homecarelounge.shop/seoul-gangbuk/</loc><priority>0.8</priority></url>
-  <url><loc>https://homecarelounge.shop/seoul-dobong/</loc><priority>0.8</priority></url>
-  <url><loc>https://homecarelounge.shop/seoul-nowon/</loc><priority>0.8</priority></url>
-  <url><loc>https://homecarelounge.shop/seoul-eunpyeong/</loc><priority>0.8</priority></url>
-  <url><loc>https://homecarelounge.shop/seoul-seodaemun/</loc><priority>0.8</priority></url>
-  <url><loc>https://homecarelounge.shop/seoul-jongno/</loc><priority>0.8</priority></url>
-  <url><loc>https://homecarelounge.shop/seoul-junggu/</loc><priority>0.8</priority></url>
-  <url><loc>https://homecarelounge.shop/seoul-gangseo/</loc><priority>0.8</priority></url>
-  <url><loc>https://homecarelounge.shop/seoul-yangcheon/</loc><priority>0.8</priority></url>
-  <url><loc>https://homecarelounge.shop/seoul-guro/</loc><priority>0.8</priority></url>
-  <url><loc>https://homecarelounge.shop/seoul-geumcheon/</loc><priority>0.8</priority></url>
-  <url><loc>https://homecarelounge.shop/seoul-gwanak/</loc><priority>0.8</priority></url>
-  <url><loc>https://homecarelounge.shop/seoul-dongjak/</loc><priority>0.8</priority></url>
+  <url><loc>https://royaltouch-service.netlify.app/seoul-gangnam/</loc><priority>0.8</priority></url>
+  <url><loc>https://royaltouch-service.netlify.app/seoul-seocho/</loc><priority>0.8</priority></url>
+  <url><loc>https://royaltouch-service.netlify.app/seoul-songpa/</loc><priority>0.8</priority></url>
+  <url><loc>https://royaltouch-service.netlify.app/seoul-gangdong/</loc><priority>0.8</priority></url>
+  <url><loc>https://royaltouch-service.netlify.app/seoul-mapo/</loc><priority>0.8</priority></url>
+  <url><loc>https://royaltouch-service.netlify.app/seoul-yeongdeungpo/</loc><priority>0.8</priority></url>
+  <url><loc>https://royaltouch-service.netlify.app/seoul-yongsan/</loc><priority>0.8</priority></url>
+  <url><loc>https://royaltouch-service.netlify.app/seoul-seongdong/</loc><priority>0.8</priority></url>
+  <url><loc>https://royaltouch-service.netlify.app/seoul-gwangjin/</loc><priority>0.8</priority></url>
+  <url><loc>https://royaltouch-service.netlify.app/seoul-dongdaemun/</loc><priority>0.8</priority></url>
+  <url><loc>https://royaltouch-service.netlify.app/seoul-jungnang/</loc><priority>0.8</priority></url>
+  <url><loc>https://royaltouch-service.netlify.app/seoul-seongbuk/</loc><priority>0.8</priority></url>
+  <url><loc>https://royaltouch-service.netlify.app/seoul-gangbuk/</loc><priority>0.8</priority></url>
+  <url><loc>https://royaltouch-service.netlify.app/seoul-dobong/</loc><priority>0.8</priority></url>
+  <url><loc>https://royaltouch-service.netlify.app/seoul-nowon/</loc><priority>0.8</priority></url>
+  <url><loc>https://royaltouch-service.netlify.app/seoul-eunpyeong/</loc><priority>0.8</priority></url>
+  <url><loc>https://royaltouch-service.netlify.app/seoul-seodaemun/</loc><priority>0.8</priority></url>
+  <url><loc>https://royaltouch-service.netlify.app/seoul-jongno/</loc><priority>0.8</priority></url>
+  <url><loc>https://royaltouch-service.netlify.app/seoul-junggu/</loc><priority>0.8</priority></url>
+  <url><loc>https://royaltouch-service.netlify.app/seoul-gangseo/</loc><priority>0.8</priority></url>
+  <url><loc>https://royaltouch-service.netlify.app/seoul-yangcheon/</loc><priority>0.8</priority></url>
+  <url><loc>https://royaltouch-service.netlify.app/seoul-guro/</loc><priority>0.8</priority></url>
+  <url><loc>https://royaltouch-service.netlify.app/seoul-geumcheon/</loc><priority>0.8</priority></url>
+  <url><loc>https://royaltouch-service.netlify.app/seoul-gwanak/</loc><priority>0.8</priority></url>
+  <url><loc>https://royaltouch-service.netlify.app/seoul-dongjak/</loc><priority>0.8</priority></url>
 
   <!-- 경기도 시/구별 -->
-  <url><loc>https://homecarelounge.shop/gyeonggi-suwon/</loc><priority>0.8</priority></url>
-  <url><loc>https://homecarelounge.shop/gyeonggi-seongnam/</loc><priority>0.8</priority></url>
-  <url><loc>https://homecarelounge.shop/gyeonggi-uijeongbu/</loc><priority>0.8</priority></url>
-  <url><loc>https://homecarelounge.shop/gyeonggi-anyang/</loc><priority>0.8</priority></url>
-  <url><loc>https://homecarelounge.shop/gyeonggi-bucheon/</loc><priority>0.8</priority></url>
-  <url><loc>https://homecarelounge.shop/gyeonggi-gwangmyeong/</loc><priority>0.8</priority></url>
-  <url><loc>https://homecarelounge.shop/gyeonggi-pyeongtaek/</loc><priority>0.8</priority></url>
-  <url><loc>https://homecarelounge.shop/gyeonggi-ansan/</loc><priority>0.8</priority></url>
-  <url><loc>https://homecarelounge.shop/gyeonggi-goyang/</loc><priority>0.8</priority></url>
-  <url><loc>https://homecarelounge.shop/gyeonggi-namyangju/</loc><priority>0.8</priority></url>
-  <url><loc>https://homecarelounge.shop/gyeonggi-siheung/</loc><priority>0.8</priority></url>
-  <url><loc>https://homecarelounge.shop/gyeonggi-yongin/</loc><priority>0.8</priority></url>
-  <url><loc>https://homecarelounge.shop/gyeonggi-paju/</loc><priority>0.8</priority></url>
-  <url><loc>https://homecarelounge.shop/gyeonggi-gimpo/</loc><priority>0.8</priority></url>
-  <url><loc>https://homecarelounge.shop/gyeonggi-hwaseong/</loc><priority>0.8</priority></url>
+  <url><loc>https://royaltouch-service.netlify.app/gyeonggi-suwon/</loc><priority>0.8</priority></url>
+  <url><loc>https://royaltouch-service.netlify.app/gyeonggi-seongnam/</loc><priority>0.8</priority></url>
+  <url><loc>https://royaltouch-service.netlify.app/gyeonggi-uijeongbu/</loc><priority>0.8</priority></url>
+  <url><loc>https://royaltouch-service.netlify.app/gyeonggi-anyang/</loc><priority>0.8</priority></url>
+  <url><loc>https://royaltouch-service.netlify.app/gyeonggi-bucheon/</loc><priority>0.8</priority></url>
+  <url><loc>https://royaltouch-service.netlify.app/gyeonggi-gwangmyeong/</loc><priority>0.8</priority></url>
+  <url><loc>https://royaltouch-service.netlify.app/gyeonggi-pyeongtaek/</loc><priority>0.8</priority></url>
+  <url><loc>https://royaltouch-service.netlify.app/gyeonggi-ansan/</loc><priority>0.8</priority></url>
+  <url><loc>https://royaltouch-service.netlify.app/gyeonggi-goyang/</loc><priority>0.8</priority></url>
+  <url><loc>https://royaltouch-service.netlify.app/gyeonggi-namyangju/</loc><priority>0.8</priority></url>
+  <url><loc>https://royaltouch-service.netlify.app/gyeonggi-siheung/</loc><priority>0.8</priority></url>
+  <url><loc>https://royaltouch-service.netlify.app/gyeonggi-yongin/</loc><priority>0.8</priority></url>
+  <url><loc>https://royaltouch-service.netlify.app/gyeonggi-paju/</loc><priority>0.8</priority></url>
+  <url><loc>https://royaltouch-service.netlify.app/gyeonggi-gimpo/</loc><priority>0.8</priority></url>
+  <url><loc>https://royaltouch-service.netlify.app/gyeonggi-hwaseong/</loc><priority>0.8</priority></url>
 
   <!-- 인천광역시 구별 -->
-  <url><loc>https://homecarelounge.shop/incheon-yeonsu/</loc><priority>0.8</priority></url>
-  <url><loc>https://homecarelounge.shop/incheon-bupyeong/</loc><priority>0.8</priority></url>
-  <url><loc>https://homecarelounge.shop/incheon-seogu/</loc><priority>0.8</priority></url>
-  <url><loc>https://homecarelounge.shop/incheon-namdong/</loc><priority>0.8</priority></url>
+  <url><loc>https://royaltouch-service.netlify.app/incheon-yeonsu/</loc><priority>0.8</priority></url>
+  <url><loc>https://royaltouch-service.netlify.app/incheon-bupyeong/</loc><priority>0.8</priority></url>
+  <url><loc>https://royaltouch-service.netlify.app/incheon-seogu/</loc><priority>0.8</priority></url>
+  <url><loc>https://royaltouch-service.netlify.app/incheon-namdong/</loc><priority>0.8</priority></url>
 
   <!-- 천안시 구별 -->
-  <url><loc>https://homecarelounge.shop/cheonan-seobuk/</loc><priority>0.8</priority></url>
-  <url><loc>https://homecarelounge.shop/cheonan-dongnam/</loc><priority>0.8</priority></url>
+  <url><loc>https://royaltouch-service.netlify.app/cheonan-seobuk/</loc><priority>0.8</priority></url>
+  <url><loc>https://royaltouch-service.netlify.app/cheonan-dongnam/</loc><priority>0.8</priority></url>
 </urlset>
