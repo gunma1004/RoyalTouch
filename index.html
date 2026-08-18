@@ -98,16 +98,21 @@
   window.onload = function() {
     const shopContainer = document.getElementById('shop-list-container');
     shopsData.forEach(shop => {
+      // 1. 업체 정보와 전화번호가 포함된 HTML 생성
       shopContainer.innerHTML += `
         <div class="hcl-shop-card">
           <img src="${shop.img}" class="hcl-shop-img">
-          <div>
+          <div class="hcl-shop-info">
             <span style="background:#d8a85f; color:#fff; padding:2px 8px; border-radius:4px; font-size:12px;">${shop.badge}</span>
             <h3 style="margin:8px 0;">${shop.name}</h3>
-            <p style="font-size:14px; color:#666;">${shop.desc}</p>
+            <p style="font-size:14px; color:#666; margin-bottom:10px;">${shop.desc}</p>
+            <div style="font-weight:bold; color:#1f486d; font-size:16px;">📞 ${shop.phone}</div>
+            <a href="tel:${shop.phone}" style="display:inline-block; margin-top:10px; padding:8px 16px; background:#1f486d; color:#fff; border-radius:8px; font-size:14px;">전화 연결하기</a>
           </div>
         </div>`;
     });
+    
+    // 지역 탭 로드
     switchRegion('seoul', document.querySelector('.hcl-tab'));
   };
 </script>
