@@ -2,66 +2,66 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <!-- 전체 메인 -->
   <url>
-    <loc>https://gunmamong.shop/</loc>
+    <loc>https://homecarelounge.shop/</loc>
     <priority>1.0</priority>
   </url>
 
   <!-- 1차 광역 시/도 -->
-  <url><loc>https://gunmamong.shop/gyeonggi/</loc><priority>0.9</priority></url>
-  <url><loc>https://gunmamong.shop/incheon/</loc><priority>0.9</priority></url>
-  <url><loc>https://gunmamong.shop/cheonan/</loc><priority>0.9</priority></url>
+  <url><loc>https://homecarelounge.shop/gyeonggi/</loc><priority>0.9</priority></url>
+  <url><loc>https://homecarelounge.shop/incheon/</loc><priority>0.9</priority></url>
+  <url><loc>https://homecarelounge.shop/cheonan/</loc><priority>0.9</priority></url>
 
   <!-- 서울특별시 구별 정적 주소 -->
-  <url><loc>https://gunmamong.shop/seoul-gangnam/</loc><priority>0.8</priority></url>
-  <url><loc>https://gunmamong.shop/seoul-seocho/</loc><priority>0.8</priority></url>
-  <url><loc>https://gunmamong.shop/seoul-songpa/</loc><priority>0.8</priority></url>
-  <url><loc>https://gunmamong.shop/seoul-gangdong/</loc><priority>0.8</priority></url>
-  <url><loc>https://gunmamong.shop/seoul-mapo/</loc><priority>0.8</priority></url>
-  <url><loc>https://gunmamong.shop/seoul-yeongdeungpo/</loc><priority>0.8</priority></url>
-  <url><loc>https://gunmamong.shop/seoul-yongsan/</loc><priority>0.8</priority></url>
-  <url><loc>https://gunmamong.shop/seoul-seongdong/</loc><priority>0.8</priority></url>
-  <url><loc>https://gunmamong.shop/seoul-gwangjin/</loc><priority>0.8</priority></url>
-  <url><loc>https://gunmamong.shop/seoul-dongdaemun/</loc><priority>0.8</priority></url>
-  <url><loc>https://gunmamong.shop/seoul-jungnang/</loc><priority>0.8</priority></url>
-  <url><loc>https://gunmamong.shop/seoul-seongbuk/</loc><priority>0.8</priority></url>
-  <url><loc>https://gunmamong.shop/seoul-gangbuk/</loc><priority>0.8</priority></url>
-  <url><loc>https://gunmamong.shop/seoul-dobong/</loc><priority>0.8</priority></url>
-  <url><loc>https://gunmamong.shop/seoul-nowon/</loc><priority>0.8</priority></url>
-  <url><loc>https://gunmamong.shop/seoul-eunpyeong/</loc><priority>0.8</priority></url>
-  <url><loc>https://gunmamong.shop/seoul-seodaemun/</loc><priority>0.8</priority></url>
-  <url><loc>https://gunmamong.shop/seoul-jongno/</loc><priority>0.8</priority></url>
-  <url><loc>https://gunmamong.shop/seoul-junggu/</loc><priority>0.8</priority></url>
-  <url><loc>https://gunmamong.shop/seoul-gangseo/</loc><priority>0.8</priority></url>
-  <url><loc>https://gunmamong.shop/seoul-yangcheon/</loc><priority>0.8</priority></url>
-  <url><loc>https://gunmamong.shop/seoul-guro/</loc><priority>0.8</priority></url>
-  <url><loc>https://gunmamong.shop/seoul-geumcheon/</loc><priority>0.8</priority></url>
-  <url><loc>https://gunmamong.shop/seoul-gwanak/</loc><priority>0.8</priority></url>
-  <url><loc>https://gunmamong.shop/seoul-dongjak/</loc><priority>0.8</priority></url>
+  <url><loc>https://homecarelounge.shop/seoul-gangnam/</loc><priority>0.8</priority></url>
+  <url><loc>https://homecarelounge.shop/seoul-seocho/</loc><priority>0.8</priority></url>
+  <url><loc>https://homecarelounge.shop/seoul-songpa/</loc><priority>0.8</priority></url>
+  <url><loc>https://homecarelounge.shop/seoul-gangdong/</loc><priority>0.8</priority></url>
+  <url><loc>https://homecarelounge.shop/seoul-mapo/</loc><priority>0.8</priority></url>
+  <url><loc>https://homecarelounge.shop/seoul-yeongdeungpo/</loc><priority>0.8</priority></url>
+  <url><loc>https://homecarelounge.shop/seoul-yongsan/</loc><priority>0.8</priority></url>
+  <url><loc>https://homecarelounge.shop/seoul-seongdong/</loc><priority>0.8</priority></url>
+  <url><loc>https://homecarelounge.shop/seoul-gwangjin/</loc><priority>0.8</priority></url>
+  <url><loc>https://homecarelounge.shop/seoul-dongdaemun/</loc><priority>0.8</priority></url>
+  <url><loc>https://homecarelounge.shop/seoul-jungnang/</loc><priority>0.8</priority></url>
+  <url><loc>https://homecarelounge.shop/seoul-seongbuk/</loc><priority>0.8</priority></url>
+  <url><loc>https://homecarelounge.shop/seoul-gangbuk/</loc><priority>0.8</priority></url>
+  <url><loc>https://homecarelounge.shop/seoul-dobong/</loc><priority>0.8</priority></url>
+  <url><loc>https://homecarelounge.shop/seoul-nowon/</loc><priority>0.8</priority></url>
+  <url><loc>https://homecarelounge.shop/seoul-eunpyeong/</loc><priority>0.8</priority></url>
+  <url><loc>https://homecarelounge.shop/seoul-seodaemun/</loc><priority>0.8</priority></url>
+  <url><loc>https://homecarelounge.shop/seoul-jongno/</loc><priority>0.8</priority></url>
+  <url><loc>https://homecarelounge.shop/seoul-junggu/</loc><priority>0.8</priority></url>
+  <url><loc>https://homecarelounge.shop/seoul-gangseo/</loc><priority>0.8</priority></url>
+  <url><loc>https://homecarelounge.shop/seoul-yangcheon/</loc><priority>0.8</priority></url>
+  <url><loc>https://homecarelounge.shop/seoul-guro/</loc><priority>0.8</priority></url>
+  <url><loc>https://homecarelounge.shop/seoul-geumcheon/</loc><priority>0.8</priority></url>
+  <url><loc>https://homecarelounge.shop/seoul-gwanak/</loc><priority>0.8</priority></url>
+  <url><loc>https://homecarelounge.shop/seoul-dongjak/</loc><priority>0.8</priority></url>
 
   <!-- 경기도 시/구별 -->
-  <url><loc>https://gunmamong.shop/gyeonggi-suwon/</loc><priority>0.8</priority></url>
-  <url><loc>https://gunmamong.shop/gyeonggi-seongnam/</loc><priority>0.8</priority></url>
-  <url><loc>https://gunmamong.shop/gyeonggi-uijeongbu/</loc><priority>0.8</priority></url>
-  <url><loc>https://gunmamong.shop/gyeonggi-anyang/</loc><priority>0.8</priority></url>
-  <url><loc>https://gunmamong.shop/gyeonggi-bucheon/</loc><priority>0.8</priority></url>
-  <url><loc>https://gunmamong.shop/gyeonggi-gwangmyeong/</loc><priority>0.8</priority></url>
-  <url><loc>https://gunmamong.shop/gyeonggi-pyeongtaek/</loc><priority>0.8</priority></url>
-  <url><loc>https://gunmamong.shop/gyeonggi-ansan/</loc><priority>0.8</priority></url>
-  <url><loc>https://gunmamong.shop/gyeonggi-goyang/</loc><priority>0.8</priority></url>
-  <url><loc>https://gunmamong.shop/gyeonggi-namyangju/</loc><priority>0.8</priority></url>
-  <url><loc>https://gunmamong.shop/gyeonggi-siheung/</loc><priority>0.8</priority></url>
-  <url><loc>https://gunmamong.shop/gyeonggi-yongin/</loc><priority>0.8</priority></url>
-  <url><loc>https://gunmamong.shop/gyeonggi-paju/</loc><priority>0.8</priority></url>
-  <url><loc>https://gunmamong.shop/gyeonggi-gimpo/</loc><priority>0.8</priority></url>
-  <url><loc>https://gunmamong.shop/gyeonggi-hwaseong/</loc><priority>0.8</priority></url>
+  <url><loc>https://homecarelounge.shop/gyeonggi-suwon/</loc><priority>0.8</priority></url>
+  <url><loc>https://homecarelounge.shop/gyeonggi-seongnam/</loc><priority>0.8</priority></url>
+  <url><loc>https://homecarelounge.shop/gyeonggi-uijeongbu/</loc><priority>0.8</priority></url>
+  <url><loc>https://homecarelounge.shop/gyeonggi-anyang/</loc><priority>0.8</priority></url>
+  <url><loc>https://homecarelounge.shop/gyeonggi-bucheon/</loc><priority>0.8</priority></url>
+  <url><loc>https://homecarelounge.shop/gyeonggi-gwangmyeong/</loc><priority>0.8</priority></url>
+  <url><loc>https://homecarelounge.shop/gyeonggi-pyeongtaek/</loc><priority>0.8</priority></url>
+  <url><loc>https://homecarelounge.shop/gyeonggi-ansan/</loc><priority>0.8</priority></url>
+  <url><loc>https://homecarelounge.shop/gyeonggi-goyang/</loc><priority>0.8</priority></url>
+  <url><loc>https://homecarelounge.shop/gyeonggi-namyangju/</loc><priority>0.8</priority></url>
+  <url><loc>https://homecarelounge.shop/gyeonggi-siheung/</loc><priority>0.8</priority></url>
+  <url><loc>https://homecarelounge.shop/gyeonggi-yongin/</loc><priority>0.8</priority></url>
+  <url><loc>https://homecarelounge.shop/gyeonggi-paju/</loc><priority>0.8</priority></url>
+  <url><loc>https://homecarelounge.shop/gyeonggi-gimpo/</loc><priority>0.8</priority></url>
+  <url><loc>https://homecarelounge.shop/gyeonggi-hwaseong/</loc><priority>0.8</priority></url>
 
   <!-- 인천광역시 구별 -->
-  <url><loc>https://gunmamong.shop/incheon-yeonsu/</loc><priority>0.8</priority></url>
-  <url><loc>https://gunmamong.shop/incheon-bupyeong/</loc><priority>0.8</priority></url>
-  <url><loc>https://gunmamong.shop/incheon-seogu/</loc><priority>0.8</priority></url>
-  <url><loc>https://gunmamong.shop/incheon-namdong/</loc><priority>0.8</priority></url>
+  <url><loc>https://homecarelounge.shop/incheon-yeonsu/</loc><priority>0.8</priority></url>
+  <url><loc>https://homecarelounge.shop/incheon-bupyeong/</loc><priority>0.8</priority></url>
+  <url><loc>https://homecarelounge.shop/incheon-seogu/</loc><priority>0.8</priority></url>
+  <url><loc>https://homecarelounge.shop/incheon-namdong/</loc><priority>0.8</priority></url>
 
   <!-- 천안시 구별 -->
-  <url><loc>https://gunmamong.shop/cheonan-seobuk/</loc><priority>0.8</priority></url>
-  <url><loc>https://gunmamong.shop/cheonan-dongnam/</loc><priority>0.8</priority></url>
+  <url><loc>https://homecarelounge.shop/cheonan-seobuk/</loc><priority>0.8</priority></url>
+  <url><loc>https://homecarelounge.shop/cheonan-dongnam/</loc><priority>0.8</priority></url>
 </urlset>

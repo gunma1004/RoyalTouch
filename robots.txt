@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://gunmamong.shop/sitemap.xml
+Sitemap: https://homecarelounge.shop/sitemap.xml
