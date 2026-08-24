@@ -33,7 +33,7 @@ const regionData = {
     { n: "수원시", k: "gyeonggi-suwon", dongs: ["인계동", "매탄동", "영통동", "광교동", "권선동", "세류동", "곡반정동", "정자동", "율전동", "화서동"] },
     { n: "성남시", k: "gyeonggi-seongnam", dongs: ["서현동", "야탑동", "정자동", "판교동", "삼평동", "백현동", "신흥동", "태평동", "상대원동"] },
     { n: "고양시", k: "gyeonggi-goyang", dongs: ["장항동", "백석동", "마두동", "주엽동", "대화동", "화정동", "행신동", "식사동", "탄현동"] },
-    { n: "용인시", k: "gyeonggi-yongin", dongs: ["풍덕천동", "죽전동", "보정동", "상현동", "기흥동", "신갈동", "구갈동", "처인구 김량장동", "역북동"] },
+    { n: "용인시", k: "gyeonggi-yongin", dongs: ["풍덕천동", "죽전동", "보정동", "상현동", "기흥동", "신갈동", "구갈동", "김량장동", "역북동"] },
     { n: "부천시", k: "gyeonggi-bucheon", dongs: ["중동", "상동", "심곡동", "원미동", "소사동", "역곡동", "괴안동", "고강동", "오정동"] },
     { n: "안산시", k: "gyeonggi-ansan", dongs: ["중앙동", "고잔동", "초지동", "원곡동", "선부동", "본오동", "사동", "일동", "와동"] },
     { n: "안양시", k: "gyeonggi-anyang", dongs: ["평촌동", "범계동", "인덕원", "비산동", "호계동", "안양동", "석수동", "박달동"] },
@@ -147,7 +147,49 @@ const shopsData = [
 ];
 
 // ==========================================================================
-// 🌟 3. 하단 지역 탭 전환 함수
+// 🌟 3. 동(Dong) 버튼 클릭 시 실시간 타깃 변경 함수
+// ==========================================================================
+function setDongKeyword(dongName, btnEl) {
+  const baseGu = (typeof currentLocLabel !== 'undefined' && currentLocLabel) ? currentLocLabel : "";
+  const fullLoc = baseGu ? `${baseGu} ${dongName}` : dongName;
+
+  // 1) 버튼 active 스타일 토글
+  document.querySelectorAll('.bl-dong-btn').forEach(btn => {
+    btn.style.background = '#f1f5f9';
+    btn.style.color = '#334155';
+    btn.style.borderColor = '#cbd5e1';
+  });
+  if (btnEl) {
+    btnEl.style.background = '#0f172a';
+    btnEl.style.color = '#fff';
+    btnEl.style.borderColor = '#0f172a';
+  }
+
+  // 2) 업체 카드의 위치 배지 텍스트 실시간 변경
+  document.querySelectorAll('.bl-shop-location, .hcl-shop-location').forEach(el => {
+    el.innerText = `📍 ${fullLoc} 25분 내 신속 방문`;
+  });
+
+  // 3) 문자 예약 링크 템플릿 실시간 갱신
+  const smsText = encodeURIComponent(`안녕하세요. 바디로그 보고 [${fullLoc} 출장마사지] 예약 문의드립니다.`);
+  document.querySelectorAll('.bl-shop-card, .hcl-shop-card').forEach(card => {
+    const phoneEl = card.querySelector('.bl-shop-phone-num, .hcl-shop-phone-num');
+    const smsBtn = card.querySelector('.bl-btn-sms, .hcl-btn-sms');
+    if (phoneEl && smsBtn) {
+      const phone = phoneEl.innerText.trim();
+      smsBtn.href = `sms:${phone}?body=${smsText}`;
+    }
+  });
+
+  // 4) 제휴 업체 목록 영역으로 부드럽게 스크롤
+  const shopSec = document.querySelector('.bl-shop-section, .hcl-shop-section');
+  if (shopSec) {
+    shopSec.scrollIntoView({ behavior: 'smooth' });
+  }
+}
+
+// ==========================================================================
+// 🌟 4. 하단 지역 탭 전환 함수
 // ==========================================================================
 function switchRegion(reg, el) {
   const tabs = document.querySelectorAll('.bl-tab, .hcl-tab');
@@ -156,8 +198,8 @@ function switchRegion(reg, el) {
 
   const container = document.getElementById('subregion-container');
   if (container && regionData[reg]) {
-    // 하위 구/동 페이지에서는 '출장마사지', 메인에서는 '홈케어'로 표시
-    const suffix = (typeof currentLocLabel !== 'undefined' && currentLocLabel) ? "출장마사지" : "홈케어";
+    const isSub = (typeof currentLocLabel !== 'undefined' && currentLocLabel);
+    const suffix = isSub ? "출장마사지" : "홈케어";
     container.innerHTML = regionData[reg].map(item =>
       `<a href="/${item.k}/" class="bl-link-item hcl-link-item">${item.n} ${suffix} ➔</a>`
     ).join('');
@@ -165,7 +207,7 @@ function switchRegion(reg, el) {
 }
 
 // ==========================================================================
-// 🌟 4. 페이지 렌더링 및 키워드 자동화
+// 🌟 5. 페이지 로드 시 자동 렌더링
 // ==========================================================================
 window.onload = function() {
   const isSub = (typeof currentLocLabel !== 'undefined' && currentLocLabel);
@@ -207,7 +249,7 @@ window.onload = function() {
     });
   }
 
-  // 2) 하위 구 페이지일 때 세부 '동' 목록 뱃지 자동 생성 (SEO 키워드 강화)
+  // 2) 클릭 가능한 동(Dong) 버튼 렌더링
   const dongBox = document.getElementById('dong-list-container');
   if (dongBox && typeof currentLocKey !== 'undefined') {
     let matchedDongs = [];
@@ -220,7 +262,7 @@ window.onload = function() {
     }
     if (matchedDongs.length > 0) {
       dongBox.innerHTML = matchedDongs.map(dong => 
-        `<span style="display:inline-block; padding:5px 11px; margin:3px; background:#f1f5f9; border-radius:6px; font-size:12.5px; color:#334155; font-weight:600; border:1px solid #e2e8f0;"># ${dong} 출장마사지</span>`
+        `<button type="button" class="bl-dong-btn" onclick="setDongKeyword('${dong}', this)" style="display:inline-block; padding:6px 12px; margin:4px 3px; background:#f1f5f9; border-radius:8px; font-size:13px; color:#334155; font-weight:700; border:1px solid #cbd5e1; cursor:pointer; transition:all 0.15s ease;">📍 ${dong} 출장마사지</button>`
       ).join('');
     }
   }
