@@ -2,90 +2,406 @@
 const fs = require('fs');
 const path = require('path');
 
-// 🌟 전체 지역 및 세부 동 데이터
+// 🌟 전체 지역 데이터 (시/구 + 동 URL 키)
 const regionData = {
   seoul: [
-    { n: "강남구", k: "seoul-gangnam", dongs: ["역삼동", "논현동", "삼성동", "대치동", "신사동", "청담동", "압구정동", "개포동", "도곡동", "일원동", "수서동"] },
-    { n: "강동구", k: "seoul-gangdong", dongs: ["천호동", "길동", "명일동", "고덕동", "암사동", "성내동", "둔촌동", "강일동", "상일동"] },
-    { n: "강북구", k: "seoul-gangbuk", dongs: ["수유동", "미아동", "번동", "우이동"] },
-    { n: "강서구", k: "seoul-gangseo", dongs: ["화곡동", "가양동", "마곡동", "등촌동", "발산동", "방화동", "공항동", "염창동"] },
-    { n: "관악구", k: "seoul-gwanak", dongs: ["신림동", "봉천동", "낙성대동", "남현동", "보라매동", "조원동"] },
-    { n: "광진구", k: "seoul-gwangjin", dongs: ["자양동", "화양동", "구의동", "군자동", "중곡동", "광장동"] },
-    { n: "구로구", k: "seoul-guro", dongs: ["구로동", "신도림동", "가리봉동", "개봉동", "오류동", "고척동", "천왕동"] },
-    { n: "금천구", k: "seoul-geumcheon", dongs: ["가산동", "독산동", "시흥동"] },
-    { n: "노원구", k: "seoul-nowon", dongs: ["상계동", "중계동", "하계동", "월계동", "공릉동"] },
-    { n: "도봉구", k: "seoul-dobong", dongs: ["쌍문동", "방학동", "창동", "도봉동"] },
-    { n: "동대문구", k: "seoul-dongdaemun", dongs: ["장안동", "답십리동", "전농동", "용두동", "제기동", "이문동", "휘경동", "청량리동"] },
-    { n: "동작구", k: "seoul-dongjak", dongs: ["사당동", "상도동", "노량진동", "흑석동", "대방동", "신대방동"] },
-    { n: "마포구", k: "seoul-mapo", dongs: ["서교동", "동교동", "합정동", "망원동", "연남동", "공덕동", "아현동", "상암동", "성산동"] },
-    { n: "서대문구", k: "seoul-seodaemun", dongs: ["신촌동", "창천동", "연희동", "홍제동", "남가좌동", "북가좌동", "홍은동"] },
-    { n: "서초구", k: "seoul-seocho", dongs: ["서초동", "반포동", "방배동", "양재동", "잠원동", "우면동", "내곡동"] },
-    { n: "성동구", k: "seoul-seongdong", dongs: ["성수동", "왕십리동", "행당동", "금호동", "옥수동", "마장동", "송정동"] },
-    { n: "성북구", k: "seoul-seongbuk", dongs: ["길음동", "돈암동", "안암동", "정릉동", "석관동", "종암동", "장위동"] },
-    { n: "송파구", k: "seoul-songpa", dongs: ["잠실동", "가락동", "문정동", "방이동", "석촌동", "삼전동", "송파동", "오금동", "장지동"] },
-    { n: "양천구", k: "seoul-yangcheon", dongs: ["목동", "신정동", "신월동"] },
-    { n: "영등포구", k: "seoul-yeongdeungpo", dongs: ["여의도동", "영등포동", "당산동", "문래동", "양평동", "신길동", "대림동"] },
-    { n: "용산구", k: "seoul-yongsan", dongs: ["이태원동", "한남동", "용산동", "청파동", "효창동", "원효로동", "이촌동", "보광동"] },
-    { n: "은평구", k: "seoul-eunpyeong", dongs: ["불광동", "갈현동", "응암동", "연신내", "녹번동", "대조동", "역촌동", "진관동"] },
-    { n: "종로구", k: "seoul-jongno", dongs: ["종로", "혜화동", "명륜동", "평창동", "무악동", "숭인동", "창신동"] },
-    { n: "중구", k: "seoul-junggu", dongs: ["명동", "을지로", "충무로", "신당동", "황학동", "다산동", "중림동"] },
-    { n: "중랑구", k: "seoul-jungnang", dongs: ["면목동", "상봉동", "중화동", "묵동", "망우동", "신내동"] }
+    {
+      n: "강남구", k: "seoul-gangnam",
+      dongs: [
+        { n: "역삼동", k: "seoul-gangnam-yeoksam" }, { n: "논현동", k: "seoul-gangnam-nonhyeon" },
+        { n: "삼성동", k: "seoul-gangnam-samseong" }, { n: "대치동", k: "seoul-gangnam-daechi" },
+        { n: "신사동", k: "seoul-gangnam-sinsa" }, { n: "청담동", k: "seoul-gangnam-cheongdam" },
+        { n: "압구정동", k: "seoul-gangnam-apgujeong" }, { n: "개포동", k: "seoul-gangnam-gaepo" },
+        { n: "도곡동", k: "seoul-gangnam-dogok" }, { n: "일원동", k: "seoul-gangnam-ilwon" },
+        { n: "수서동", k: "seoul-gangnam-suseo" }
+      ]
+    },
+    {
+      n: "강동구", k: "seoul-gangdong",
+      dongs: [
+        { n: "천호동", k: "seoul-gangdong-cheonho" }, { n: "길동", k: "seoul-gangdong-gil" },
+        { n: "명일동", k: "seoul-gangdong-myeongil" }, { n: "고덕동", k: "seoul-gangdong-godeok" },
+        { n: "암사동", k: "seoul-gangdong-amsa" }, { n: "성내동", k: "seoul-gangdong-seongnae" },
+        { n: "둔촌동", k: "seoul-gangdong-dunchon" }, { n: "강일동", k: "seoul-gangdong-gangil" }
+      ]
+    },
+    {
+      n: "강북구", k: "seoul-gangbuk",
+      dongs: [
+        { n: "수유동", k: "seoul-gangbuk-suyu" }, { n: "미아동", k: "seoul-gangbuk-mia" },
+        { n: "번동", k: "seoul-gangbuk-beon" }, { n: "우이동", k: "seoul-gangbuk-ui" }
+      ]
+    },
+    {
+      n: "강서구", k: "seoul-gangseo",
+      dongs: [
+        { n: "화곡동", k: "seoul-gangseo-hwagok" }, { n: "가양동", k: "seoul-gangseo-gayang" },
+        { n: "마곡동", k: "seoul-gangseo-magok" }, { n: "등촌동", k: "seoul-gangseo-deungchon" },
+        { n: "발산동", k: "seoul-gangseo-balsan" }, { n: "방화동", k: "seoul-gangseo-banghwa" },
+        { n: "공항동", k: "seoul-gangseo-gonghang" }, { n: "염창동", k: "seoul-gangseo-yeomchang" }
+      ]
+    },
+    {
+      n: "관악구", k: "seoul-gwanak",
+      dongs: [
+        { n: "신림동", k: "seoul-gwanak-sillim" }, { n: "봉천동", k: "seoul-gwanak-bongcheon" },
+        { n: "낙성대동", k: "seoul-gwanak-nakseongdae" }, { n: "남현동", k: "seoul-gwanak-namhyeon" },
+        { n: "보라매동", k: "seoul-gwanak-boramae" }
+      ]
+    },
+    {
+      n: "광진구", k: "seoul-gwangjin",
+      dongs: [
+        { n: "자양동", k: "seoul-gwangjin-jayang" }, { n: "화양동", k: "seoul-gwangjin-hwayang" },
+        { n: "구의동", k: "seoul-gwangjin-gui" }, { n: "군자동", k: "seoul-gwangjin-gunja" },
+        { n: "중곡동", k: "seoul-gwangjin-junggok" }, { n: "광장동", k: "seoul-gwangjin-gwangjang" }
+      ]
+    },
+    {
+      n: "구로구", k: "seoul-guro",
+      dongs: [
+        { n: "구로동", k: "seoul-guro-guro" }, { n: "신도림동", k: "seoul-guro-sindorim" },
+        { n: "가리봉동", k: "seoul-guro-garibong" }, { n: "개봉동", k: "seoul-guro-gaebong" },
+        { n: "오류동", k: "seoul-guro-oryu" }, { n: "고척동", k: "seoul-guro-gocheok" }
+      ]
+    },
+    {
+      n: "금천구", k: "seoul-geumcheon",
+      dongs: [
+        { n: "가산동", k: "seoul-geumcheon-gasan" }, { n: "독산동", k: "seoul-geumcheon-doksan" },
+        { n: "시흥동", k: "seoul-geumcheon-siheung" }
+      ]
+    },
+    {
+      n: "노원구", k: "seoul-nowon",
+      dongs: [
+        { n: "상계동", k: "seoul-nowon-sanggye" }, { n: "중계동", k: "seoul-nowon-junggye" },
+        { n: "하계동", k: "seoul-nowon-hagye" }, { n: "월계동", k: "seoul-nowon-wolgye" },
+        { n: "공릉동", k: "seoul-nowon-gongneung" }
+      ]
+    },
+    {
+      n: "도봉구", k: "seoul-dobong",
+      dongs: [
+        { n: "쌍문동", k: "seoul-dobong-ssangmun" }, { n: "방학동", k: "seoul-dobong-banghak" },
+        { n: "창동", k: "seoul-dobong-chang" }, { n: "도봉동", k: "seoul-dobong-dobong" }
+      ]
+    },
+    {
+      n: "동대문구", k: "seoul-dongdaemun",
+      dongs: [
+        { n: "장안동", k: "seoul-dongdaemun-jangan" }, { n: "답십리동", k: "seoul-dongdaemun-dapsimni" },
+        { n: "전농동", k: "seoul-dongdaemun-jeonnong" }, { n: "용두동", k: "seoul-dongdaemun-yongdu" },
+        { n: "제기동", k: "seoul-dongdaemun-jegi" }, { n: "이문동", k: "seoul-dongdaemun-imun" },
+        { n: "휘경동", k: "seoul-dongdaemun-hwigyeong" }
+      ]
+    },
+    {
+      n: "동작구", k: "seoul-dongjak",
+      dongs: [
+        { n: "사당동", k: "seoul-dongjak-sadang" }, { n: "상도동", k: "seoul-dongjak-sangdo" },
+        { n: "노량진동", k: "seoul-dongjak-noryangjin" }, { n: "흑석동", k: "seoul-dongjak-heukseok" },
+        { n: "대방동", k: "seoul-dongjak-daebang" }, { n: "신대방동", k: "seoul-dongjak-sindaebang" }
+      ]
+    },
+    {
+      n: "마포구", k: "seoul-mapo",
+      dongs: [
+        { n: "서교동", k: "seoul-mapo-seogyo" }, { n: "동교동", k: "seoul-mapo-donggyo" },
+        { n: "합정동", k: "seoul-mapo-hapjeong" }, { n: "망원동", k: "seoul-mapo-mangwon" },
+        { n: "연남동", k: "seoul-mapo-yeonnam" }, { n: "공덕동", k: "seoul-mapo-gongdeok" },
+        { n: "아현동", k: "seoul-mapo-ahyeon" }, { n: "상암동", k: "seoul-mapo-sangam" }
+      ]
+    },
+    {
+      n: "서대문구", k: "seoul-seodaemun",
+      dongs: [
+        { n: "신촌동", k: "seoul-seodaemun-sinchon" }, { n: "창천동", k: "seoul-seodaemun-changcheon" },
+        { n: "연희동", k: "seoul-seodaemun-yeonhui" }, { n: "홍제동", k: "seoul-seodaemun-hongje" },
+        { n: "남가좌동", k: "seoul-seodaemun-namgajwa" }, { n: "북가좌동", k: "seoul-seodaemun-bukgajwa" }
+      ]
+    },
+    {
+      n: "서초구", k: "seoul-seocho",
+      dongs: [
+        { n: "서초동", k: "seoul-seocho-seocho" }, { n: "반포동", k: "seoul-seocho-banpo" },
+        { n: "방배동", k: "seoul-seocho-bangbae" }, { n: "양재동", k: "seoul-seocho-yangjae" },
+        { n: "잠원동", k: "seoul-seocho-jamwon" }, { n: "우면동", k: "seoul-seocho-umyeon" }
+      ]
+    },
+    {
+      n: "성동구", k: "seoul-seongdong",
+      dongs: [
+        { n: "성수동", k: "seoul-seongdong-seongsu" }, { n: "왕십리동", k: "seoul-seongdong-wangsimni" },
+        { n: "행당동", k: "seoul-seongdong-haengdang" }, { n: "금호동", k: "seoul-seongdong-geumho" },
+        { n: "옥수동", k: "seoul-seongdong-oksu" }, { n: "마장동", k: "seoul-seongdong-majang" }
+      ]
+    },
+    {
+      n: "성북구", k: "seoul-seongbuk",
+      dongs: [
+        { n: "길음동", k: "seoul-seongbuk-gireum" }, { n: "돈암동", k: "seoul-seongbuk-donam" },
+        { n: "안암동", k: "seoul-seongbuk-anam" }, { n: "정릉동", k: "seoul-seongbuk-jeongneung" },
+        { n: "석관동", k: "seoul-seongbuk-seokgwan" }, { n: "종암동", k: "seoul-seongbuk-jongam" }
+      ]
+    },
+    {
+      n: "송파구", k: "seoul-songpa",
+      dongs: [
+        { n: "잠실동", k: "seoul-songpa-jamsil" }, { n: "가락동", k: "seoul-songpa-garak" },
+        { n: "문정동", k: "seoul-songpa-munjeong" }, { n: "방이동", k: "seoul-songpa-bangi" },
+        { n: "석촌동", k: "seoul-songpa-seokchon" }, { n: "삼전동", k: "seoul-songpa-samjeon" },
+        { n: "송파동", k: "seoul-songpa-songpa" }, { n: "오금동", k: "seoul-songpa-ogeum" }
+      ]
+    },
+    {
+      n: "양천구", k: "seoul-yangcheon",
+      dongs: [
+        { n: "목동", k: "seoul-yangcheon-mok" }, { n: "신정동", k: "seoul-yangcheon-sinjeong" },
+        { n: "신월동", k: "seoul-yangcheon-sinwol" }
+      ]
+    },
+    {
+      n: "영등포구", k: "seoul-yeongdeungpo",
+      dongs: [
+        { n: "여의도동", k: "seoul-yeongdeungpo-yeouido" }, { n: "영등포동", k: "seoul-yeongdeungpo-yeongdeungpo" },
+        { n: "당산동", k: "seoul-yeongdeungpo-dangsan" }, { n: "문래동", k: "seoul-yeongdeungpo-mullae" },
+        { n: "양평동", k: "seoul-yeongdeungpo-yangpyeong" }, { n: "신길동", k: "seoul-yeongdeungpo-singil" }
+      ]
+    },
+    {
+      n: "용산구", k: "seoul-yongsan",
+      dongs: [
+        { n: "이태원동", k: "seoul-yongsan-itaewon" }, { n: "한남동", k: "seoul-yongsan-hannam" },
+        { n: "용산동", k: "seoul-yongsan-yongsan" }, { n: "청파동", k: "seoul-yongsan-cheongpa" },
+        { n: "효창동", k: "seoul-yongsan-hyochang" }, { n: "이촌동", k: "seoul-yongsan-ichon" }
+      ]
+    },
+    {
+      n: "은평구", k: "seoul-eunpyeong",
+      dongs: [
+        { n: "불광동", k: "seoul-eunpyeong-bulgwang" }, { n: "갈현동", k: "seoul-eunpyeong-galhyeon" },
+        { n: "응암동", k: "seoul-eunpyeong-eungam" }, { n: "연신내", k: "seoul-eunpyeong-yeonsinnae" },
+        { n: "녹번동", k: "seoul-eunpyeong-nokbeon" }, { n: "대조동", k: "seoul-eunpyeong-daejo" }
+      ]
+    },
+    {
+      n: "종로구", k: "seoul-jongno",
+      dongs: [
+        { n: "종로", k: "seoul-jongno-jongno" }, { n: "혜화동", k: "seoul-jongno-hyehwa" },
+        { n: "명륜동", k: "seoul-jongno-myeongnyun" }, { n: "평창동", k: "seoul-jongno-pyeongchang" }
+      ]
+    },
+    {
+      n: "중구", k: "seoul-junggu",
+      dongs: [
+        { n: "명동", k: "seoul-junggu-myeongdong" }, { n: "을지로", k: "seoul-junggu-euljiro" },
+        { n: "충무로", k: "seoul-junggu-chungmuro" }, { n: "신당동", k: "seoul-junggu-sindang" }
+      ]
+    },
+    {
+      n: "중랑구", k: "seoul-jungnang",
+      dongs: [
+        { n: "면목동", k: "seoul-jungnang-myeonmok" }, { n: "상봉동", k: "seoul-jungnang-sangbong" },
+        { n: "중화동", k: "seoul-jungnang-junghwa" }, { n: "묵동", k: "seoul-jungnang-muk" },
+        { n: "망우동", k: "seoul-jungnang-mangu" }, { n: "신내동", k: "seoul-jungnang-sinnae" }
+      ]
+    }
   ],
   gyeonggi: [
-    { n: "수원시", k: "gyeonggi-suwon", dongs: ["인계동", "매탄동", "영통동", "광교동", "권선동", "세류동", "곡반정동", "정자동", "율전동", "화서동"] },
-    { n: "성남시", k: "gyeonggi-seongnam", dongs: ["서현동", "야탑동", "정자동", "판교동", "삼평동", "백현동", "신흥동", "태평동", "상대원동"] },
-    { n: "고양시", k: "gyeonggi-goyang", dongs: ["장항동", "백석동", "마두동", "주엽동", "대화동", "화정동", "행신동", "식사동", "탄현동"] },
-    { n: "용인시", k: "gyeonggi-yongin", dongs: ["풍덕천동", "죽전동", "보정동", "상현동", "기흥동", "신갈동", "구갈동", "처인구 김량장동", "역북동"] },
-    { n: "부천시", k: "gyeonggi-bucheon", dongs: ["중동", "상동", "심곡동", "원미동", "소사동", "역곡동", "괴안동", "고강동", "오정동"] },
-    { n: "안산시", k: "gyeonggi-ansan", dongs: ["중앙동", "고잔동", "초지동", "원곡동", "선부동", "본오동", "사동", "일동", "와동"] },
-    { n: "안양시", k: "gyeonggi-anyang", dongs: ["평촌동", "범계동", "인덕원", "비산동", "호계동", "안양동", "석수동", "박달동"] },
-    { n: "남양주시", k: "gyeonggi-namyangju", dongs: ["다산동", "별내동", "호평동", "평내동", "화도읍", "진접읍", "오남읍", "와부읍"] },
-    { n: "화성시", k: "gyeonggi-hwaseong", dongs: ["동탄동", "병점동", "향남읍", "봉담읍", "남양읍", "우정읍", "새솔동"] },
-    { n: "평택시", k: "gyeonggi-pyeongtaek", dongs: ["고덕동", "비전동", "합정동", "서정동", "송탄동", "안중읍", "포승읍", "청북읍"] },
-    { n: "의정부시", k: "gyeonggi-uijeongbu", dongs: ["의정부동", "호원동", "장암동", "신곡동", "용현동", "민락동", "낙양동", "가능동"] },
-    { n: "시흥시", k: "gyeonggi-siheung", dongs: ["정왕동", "배곧동", "은계동", "목감동", "은행동", "대야동", "신천동", "거모동"] },
-    { n: "파주시", k: "gyeonggi-paju", dongs: ["야당동", "와동동", "목동동", "금촌동", "문산읍", "운정동", "교하동"] },
-    { n: "광명시", k: "gyeonggi-gwangmyeong", dongs: ["철산동", "하안동", "소하동", "일직동", "광명동"] },
-    { n: "김포시", k: "gyeonggi-gimpo", dongs: ["구래동", "장기동", "운양동", "사우동", "풍무동", "걸포동", "통진읍", "고촌읍"] },
-    { n: "군포시", k: "gyeonggi-gunpo", dongs: ["산본동", "당동", "금정동", "대야미동", "부곡동"] },
-    { n: "광주시", k: "gyeonggi-gwangju", dongs: ["경안동", "쌍령동", "송정동", "탄벌동", "태전동", "오포읍", "초월읍"] },
-    { n: "이천시", k: "gyeonggi-icheon", dongs: ["창전동", "증포동", "중리동", "관고동", "부발읍", "장호원읍"] },
-    { n: "양주시", k: "gyeonggi-yangju", dongs: ["옥정동", "회천동", "삼숭동", "고읍동", "덕정동", "백석읍"] },
-    { n: "오산시", k: "gyeonggi-osan", dongs: ["원동", "오산동", "궐동", "세교동", "금암동", "수청동"] },
-    { n: "구리시", k: "gyeonggi-guri", dongs: ["인창동", "교문동", "수택동", "토평동", "갈매동"] },
-    { n: "안성시", k: "gyeonggi-anseong", dongs: ["대덕면", "공도읍", "석정동", "아양동", "옥산동"] },
-    { n: "포천시", k: "gyeonggi-pocheon", dongs: ["신읍동", "소흘읍", "송우리", "가산면", "일동면"] },
-    { n: "의왕시", k: "gyeonggi-uiwang", dongs: ["내손동", "포일동", "오전동", "고천동", "삼동"] },
-    { n: "하남시", k: "gyeonggi-hanam", dongs: ["미사동", "신장동", "덕풍동", "풍산동", "위례동", "감이동"] },
-    { n: "여주시", k: "gyeonggi-yeoju", dongs: ["홍문동", "교동", "오학동", "가남읍"] },
-    { n: "동두천시", k: "gyeonggi-dongducheon", dongs: ["지행동", "생연동", "보산동", "송내동"] },
-    { n: "과천시", k: "gyeonggi-gwacheon", dongs: ["별양동", "중앙동", "원문동", "갈현동"] },
-    { n: "양평군", k: "gyeonggi-yangpyeong", dongs: ["양평읍", "양서면", "용문면", "강상면"] },
-    { n: "가평군", k: "gyeonggi-gapyeong", dongs: ["가평읍", "청평면", "설악면"] },
-    { n: "연천군", k: "gyeonggi-yeoncheon", dongs: ["연천읍", "전곡읍"] }
+    {
+      n: "수원시", k: "gyeonggi-suwon",
+      dongs: [
+        { n: "인계동", k: "gyeonggi-suwon-ingye" }, { n: "매탄동", k: "gyeonggi-suwon-maetan" },
+        { n: "영통동", k: "gyeonggi-suwon-yeongtong" }, { n: "광교동", k: "gyeonggi-suwon-gwanggyo" },
+        { n: "권선동", k: "gyeonggi-suwon-gwonseon" }, { n: "정자동", k: "gyeonggi-suwon-jeongja" }
+      ]
+    },
+    {
+      n: "성남시", k: "gyeonggi-seongnam",
+      dongs: [
+        { n: "서현동", k: "gyeonggi-seongnam-seohyeon" }, { n: "야탑동", k: "gyeonggi-seongnam-yatap" },
+        { n: "정자동", k: "gyeonggi-seongnam-jeongja" }, { n: "판교동", k: "gyeonggi-seongnam-pangyo" },
+        { n: "신흥동", k: "gyeonggi-seongnam-sinheung" }
+      ]
+    },
+    {
+      n: "고양시", k: "gyeonggi-goyang",
+      dongs: [
+        { n: "장항동", k: "gyeonggi-goyang-janghang" }, { n: "백석동", k: "gyeonggi-goyang-baekseok" },
+        { n: "마두동", k: "gyeonggi-goyang-madu" }, { n: "화정동", k: "gyeonggi-goyang-hwajeong" },
+        { n: "행신동", k: "gyeonggi-goyang-haengsin" }
+      ]
+    },
+    {
+      n: "용인시", k: "gyeonggi-yongin",
+      dongs: [
+        { n: "풍덕천동", k: "gyeonggi-yongin-pungdeokcheon" }, { n: "죽전동", k: "gyeonggi-yongin-jukjeon" },
+        { n: "보정동", k: "gyeonggi-yongin-bojeong" }, { n: "신갈동", k: "gyeonggi-yongin-singal" },
+        { n: "역북동", k: "gyeonggi-yongin-yeokbuk" }
+      ]
+    },
+    {
+      n: "부천시", k: "gyeonggi-bucheon",
+      dongs: [
+        { n: "중동", k: "gyeonggi-bucheon-jung" }, { n: "상동", k: "gyeonggi-bucheon-sang" },
+        { n: "심곡동", k: "gyeonggi-bucheon-simgok" }, { n: "소사동", k: "gyeonggi-bucheon-sosa" },
+        { n: "역곡동", k: "gyeonggi-bucheon-yeokgok" }
+      ]
+    },
+    {
+      n: "안산시", k: "gyeonggi-ansan",
+      dongs: [
+        { n: "중앙동", k: "gyeonggi-ansan-jungang" }, { n: "고잔동", k: "gyeonggi-ansan-gojan" },
+        { n: "초지동", k: "gyeonggi-ansan-choji" }, { n: "본오동", k: "gyeonggi-ansan-bono" }
+      ]
+    },
+    {
+      n: "안양시", k: "gyeonggi-anyang",
+      dongs: [
+        { n: "평촌동", k: "gyeonggi-anyang-pyeongchon" }, { n: "범계동", k: "gyeonggi-anyang-beomgye" },
+        { n: "인덕원", k: "gyeonggi-anyang-indeogwon" }, { n: "비산동", k: "gyeonggi-anyang-bisan" }
+      ]
+    },
+    {
+      n: "남양주시", k: "gyeonggi-namyangju",
+      dongs: [
+        { n: "다산동", k: "gyeonggi-namyangju-dasan" }, { n: "별내동", k: "gyeonggi-namyangju-byeollae" },
+        { n: "호평동", k: "gyeonggi-namyangju-hopyeong" }, { n: "평내동", k: "gyeonggi-namyangju-pyeongnae" }
+      ]
+    },
+    {
+      n: "화성시", k: "gyeonggi-hwaseong",
+      dongs: [
+        { n: "동탄동", k: "gyeonggi-hwaseong-dongtan" }, { n: "병점동", k: "gyeonggi-hwaseong-byeongjeom" },
+        { n: "향남읍", k: "gyeonggi-hwaseong-hyangnam" }, { n: "봉담읍", k: "gyeonggi-hwaseong-bongdam" }
+      ]
+    },
+    {
+      n: "평택시", k: "gyeonggi-pyeongtaek",
+      dongs: [
+        { n: "고덕동", k: "gyeonggi-pyeongtaek-godeok" }, { n: "비전동", k: "gyeonggi-pyeongtaek-bijeon" },
+        { n: "합정동", k: "gyeonggi-pyeongtaek-hapjeong" }, { n: "송탄동", k: "gyeonggi-pyeongtaek-songtan" }
+      ]
+    },
+    {
+      n: "의정부시", k: "gyeonggi-uijeongbu",
+      dongs: [
+        { n: "의정부동", k: "gyeonggi-uijeongbu-uijeongbu" }, { n: "호원동", k: "gyeonggi-uijeongbu-howon" },
+        { n: "민락동", k: "gyeonggi-uijeongbu-millak" }, { n: "신곡동", k: "gyeonggi-uijeongbu-singok" }
+      ]
+    },
+    {
+      n: "시흥시", k: "gyeonggi-siheung",
+      dongs: [
+        { n: "정왕동", k: "gyeonggi-siheung-jeongwang" }, { n: "배곧동", k: "gyeonggi-siheung-baegot" },
+        { n: "은계동", k: "gyeonggi-siheung-eungye" }, { n: "목감동", k: "gyeonggi-siheung-mokgam" }
+      ]
+    },
+    {
+      n: "파주시", k: "gyeonggi-paju",
+      dongs: [
+        { n: "야당동", k: "gyeonggi-paju-yadang" }, { n: "와동동", k: "gyeonggi-paju-wadong" },
+        { n: "금촌동", k: "gyeonggi-paju-geumchon" }, { n: "운정동", k: "gyeonggi-paju-unjeong" }
+      ]
+    },
+    {
+      n: "광명시", k: "gyeonggi-gwangmyeong",
+      dongs: [
+        { n: "철산동", k: "gyeonggi-gwangmyeong-cheolsan" }, { n: "하안동", k: "gyeonggi-gwangmyeong-haan" },
+        { n: "일직동", k: "gyeonggi-gwangmyeong-iljik" }, { n: "소하동", k: "gyeonggi-gwangmyeong-soha" }
+      ]
+    },
+    {
+      n: "김포시", k: "gyeonggi-gimpo",
+      dongs: [
+        { n: "구래동", k: "gyeonggi-gimpo-gurae" }, { n: "장기동", k: "gyeonggi-gimpo-janggi" },
+        { n: "운양동", k: "gyeonggi-gimpo-unyang" }, { n: "사우동", k: "gyeonggi-gimpo-sau" }
+      ]
+    },
+    {
+      n: "하남시", k: "gyeonggi-hanam",
+      dongs: [
+        { n: "미사동", k: "gyeonggi-hanam-misa" }, { n: "신장동", k: "gyeonggi-hanam-sinjang" },
+        { n: "위례동", k: "gyeonggi-hanam-wirye" }, { n: "덕풍동", k: "gyeonggi-hanam-deokpung" }
+      ]
+    }
   ],
   incheon: [
-    { n: "부평구", k: "incheon-bupyeong", dongs: ["부평동", "삼산동", "청천동", "갈산동", "산곡동", "십정동", "부개동"] },
-    { n: "남동구", k: "incheon-namdong", dongs: ["구월동", "간석동", "논현동", "만수동", "서창동", "도림동"] },
-    { n: "서구", k: "incheon-seogu", dongs: ["청라동", "루원시티", "검암동", "당하동", "원당동", "마전동", "가정동", "석남동", "가좌동"] },
-    { n: "연수구", k: "incheon-yeonsu", dongs: ["송도동", "연수동", "동춘동", "청학동", "옥련동", "선학동"] },
-    { n: "미추홀구", k: "incheon-michuhol", dongs: ["주안동", "도화동", "용현동", "학익동", "숭의동", "관교동", "문학동"] },
-    { n: "계양구", k: "incheon-gyeyang", dongs: ["계산동", "작전동", "효성동", "임학동", "용종동", "서운동"] },
-    { n: "중구", k: "incheon-junggu", dongs: ["영종동", "운서동", "하늘도시", "신포동", "연안동", "신흥동", "북성동"] },
-    { n: "동구", k: "incheon-donggu", dongs: ["송림동", "송현동", "화평동", "만석동", "금곡동"] },
-    { n: "강화군", k: "incheon-ganghwa", dongs: ["강화읍", "선원면", "길상면"] },
-    { n: "옹진군", k: "incheon-ongjin", dongs: ["백령면", "영흥면", "연평면"] }
+    {
+      n: "부평구", k: "incheon-bupyeong",
+      dongs: [
+        { n: "부평동", k: "incheon-bupyeong-bupyeong" }, { n: "삼산동", k: "incheon-bupyeong-samsan" },
+        { n: "청천동", k: "incheon-bupyeong-cheongcheon" }, { n: "갈산동", k: "incheon-bupyeong-galsan" }
+      ]
+    },
+    {
+      n: "남동구", k: "incheon-namdong",
+      dongs: [
+        { n: "구월동", k: "incheon-namdong-guwol" }, { n: "간석동", k: "incheon-namdong-ganseok" },
+        { n: "논현동", k: "incheon-namdong-nonhyeon" }, { n: "서창동", k: "incheon-namdong-seochang" }
+      ]
+    },
+    {
+      n: "서구", k: "incheon-seogu",
+      dongs: [
+        { n: "청라동", k: "incheon-seogu-cheongna" }, { n: "루원시티", k: "incheon-seogu-luwon" },
+        { n: "검암동", k: "incheon-seogu-geomam" }, { n: "당하동", k: "incheon-seogu-dangha" }
+      ]
+    },
+    {
+      n: "연수구", k: "incheon-yeonsu",
+      dongs: [
+        { n: "송도동", k: "incheon-yeonsu-songdo" }, { n: "연수동", k: "incheon-yeonsu-yeonsu" },
+        { n: "동춘동", k: "incheon-yeonsu-dongchun" }
+      ]
+    },
+    {
+      n: "미추홀구", k: "incheon-michuhol",
+      dongs: [
+        { n: "주안동", k: "incheon-michuhol-juan" }, { n: "도화동", k: "incheon-michuhol-dohwa" },
+        { n: "용현동", k: "incheon-michuhol-yonghyeon" }
+      ]
+    },
+    {
+      n: "계양구", k: "incheon-gyeyang",
+      dongs: [
+        { n: "계산동", k: "incheon-gyeyang-gyesan" }, { n: "작전동", k: "incheon-gyeyang-jakjeon" },
+        { n: "효성동", k: "incheon-gyeyang-hyoseong" }
+      ]
+    },
+    {
+      n: "중구", k: "incheon-junggu",
+      dongs: [
+        { n: "영종동", k: "incheon-junggu-yeongjong" }, { n: "운서동", k: "incheon-junggu-unseo" },
+        { n: "하늘도시", k: "incheon-junggu-haneul" }
+      ]
+    }
   ],
   cheonan: [
-    { n: "천안시 서북구", k: "cheonan-seobuk", dongs: ["두정동", "성정동", "불당동", "백석동", "쌍용동", "차암동", "성성동"] },
-    { n: "천안시 동남구", k: "cheonan-dongnam", dongs: ["신부동", "원성동", "봉명동", "다가동", "청수동", "청당동", "구성동"] }
+    {
+      n: "천안시 서북구", k: "cheonan-seobuk",
+      dongs: [
+        { n: "두정동", k: "cheonan-seobuk-dujeong" }, { n: "불당동", k: "cheonan-seobuk-buldang" },
+        { n: "성정동", k: "cheonan-seobuk-seongjeong" }, { n: "백석동", k: "cheonan-seobuk-baekseok" },
+        { n: "쌍용동", k: "cheonan-seobuk-ssangyong" }
+      ]
+    },
+    {
+      n: "천안시 동남구", k: "cheonan-dongnam",
+      dongs: [
+        { n: "신부동", k: "cheonan-dongnam-sinbu" }, { n: "원성동", k: "cheonan-dongnam-wonseong" },
+        { n: "청수동", k: "cheonan-dongnam-cheongsu" }, { n: "청당동", k: "cheonan-dongnam-cheongdang" }
+      ]
+    }
   ]
 };
 
-// 템플릿 생성 함수
-function generateHtml(locName, locKey, dongs) {
-  const dongsText = dongs ? dongs.slice(0, 6).join(', ') + ' 등 전지역' : '전지역';
-  const dongKeywords = dongs ? dongs.map(d => `${locName} ${d} 출장마사지`).slice(0, 5).join(', ') : '';
+// HTML 템플릿 생성기
+function generateHtml(locTitle, locKey, parentKey, isDong = false) {
+  const metaDesc = isDong
+    ? `${locTitle} 24시 출장마사지, 홈타이, 방문안마 추천 제휴 업체 안내. 자택, 호텔, 오피스텔 25분 내 빠른 방문!`
+    : `${locTitle} 전지역 24시 출장마사지, 홈타이, 방문안마 추천 제휴 업체. 25분 내 신속 힐링 케어!`;
 
   return `<!DOCTYPE html>
 <html lang="ko">
@@ -94,13 +410,13 @@ function generateHtml(locName, locKey, dongs) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="/favicon.ico" type="image/x-icon">
 
-  <title>${locName} 출장마사지 24시 홈타이 | 바디로그 (BodyLog)</title>
-  <meta name="description" content="${locName} 전지역(${dongsText}) 24시 출장마사지, 홈타이, 방문안마 추천 제휴 업체. 자택/호텔/오피스텔 25분 내 빠른 도착!">
-  <meta name="keywords" content="${locName} 출장마사지, ${locName} 홈타이, ${locName} 방문안마, ${locName} 스웨디시, ${dongKeywords}">
+  <title>${locTitle} 출장마사지 24시 홈타이 | 바디로그 (BodyLog)</title>
+  <meta name="description" content="${metaDesc}">
+  <meta name="keywords" content="${locTitle} 출장마사지, ${locTitle} 홈타이, ${locTitle} 방문안마, ${locTitle} 스웨디시, ${locTitle} 24시 마사지">
 
   <meta property="og:type" content="website">
-  <meta property="og:title" content="${locName} 출장마사지 24시 홈타이 | 바디로그">
-  <meta property="og:description" content="${locName} 24시 출장마사지, 홈타이, 스웨디시 25분 내 신속 방문">
+  <meta property="og:title" content="${locTitle} 출장마사지 24시 홈타이 | 바디로그">
+  <meta property="og:description" content="${metaDesc}">
   <meta property="og:url" content="https://bodylog.netlify.app/${locKey}/">
   <meta property="og:image" content="/images/banner.jpg">
   <meta property="og:site_name" content="바디로그">
@@ -164,23 +480,30 @@ function generateHtml(locName, locKey, dongs) {
     <div class="bl-container">
       <div class="bl-nav-content">
         <a href="/" class="bl-logo-text">BodyLog</a>
-        <span style="font-size:13px; color:#94a3b8; font-weight:700;">${locName} 24시 출장마사지 & 홈타이</span>
+        <span style="font-size:13px; color:#94a3b8; font-weight:700;">${locTitle} 24시 출장마사지 & 홈타이</span>
       </div>
     </div>
   </header>
 
   <section class="bl-hero">
     <div class="bl-container">
-      <span class="bl-eyebrow">${locName} 전지역 24시 출장마사지</span>
-      <h1>${locName} 24시 출장마사지 & 홈타이</h1>
-      <p>${dongsText} 자택, 호텔, 오피스텔 어디서나 25분 내 신속 방문 테라피!</p>
+      <span class="bl-eyebrow">${locTitle} 전지역 24시 출장마사지</span>
+      <h1>${locTitle} 24시 출장마사지 & 홈타이</h1>
+      <p>자택, 호텔, 오피스텔 어디서나 25분 내 신속 방문 테라피를 경험해 보세요.</p>
     </div>
   </section>
 
-  <section style="padding: 15px 0; text-align: center; background: #fff; border-bottom: 1px solid #e2e8f0;">
+  <!-- 🌟 구 페이지일 때 하위 동 링크 노출 / 동 페이지일 때 상위 구로 돌아가기 링크 노출 -->
+  <section style="padding: 16px 0; text-align: center; background: #fff; border-bottom: 1px solid #e2e8f0;">
     <div class="bl-container">
-      <div style="font-size: 13px; font-weight: 800; color: #475569; margin-bottom: 8px;">📍 ${locName} 실시간 25분 내 신속 방문 세부 동 안내</div>
-      <div id="dong-list-container"></div>
+      ${
+        isDong
+          ? `<div style="font-size: 14px; font-weight: 700; color: #475569;">
+               <a href="/${parentKey}/" style="color: #2563eb; font-weight: 800; text-decoration: underline;">⬅️ 상위 지역(${parentKey}) 전체보기</a>
+             </div>`
+          : `<div style="font-size: 13px; font-weight: 800; color: #475569; margin-bottom: 8px;">📍 ${locTitle} 세부 동별 출장마사지 바로가기</div>
+             <div id="dong-list-container"></div>`
+      }
     </div>
   </section>
 
@@ -188,7 +511,7 @@ function generateHtml(locName, locKey, dongs) {
     <div class="bl-container">
       <div style="text-align:center;">
         <span class="bl-eyebrow">VERIFIED PARTNERS</span>
-        <h2 class="bl-section-title">${locName} 추천 출장마사지 제휴점</h2>
+        <h2 class="bl-section-title">${locTitle} 추천 출장마사지 제휴점</h2>
       </div>
       <div class="bl-shop-list" id="shop-list-container"></div>
     </div>
@@ -212,14 +535,14 @@ function generateHtml(locName, locKey, dongs) {
 
   <footer class="bl-footer">
     <div class="bl-container">
-      <p><strong>바디로그 (${locName}점)</strong> | ${locName} 전지역 24시 출장마사지, 홈타이, 방문안마 안내 플랫폼</p>
+      <p><strong>바디로그 (${locTitle} 안내관)</strong> | 24시 출장마사지, 홈타이, 방문안마 안내 플랫폼</p>
       <p>© BodyLog. All Rights Reserved.</p>
     </div>
   </footer>
 </div>
 
 <script>
-  const currentLocLabel = "${locName}";
+  const currentLocLabel = "${locTitle}";
   const currentLocKey = "${locKey}";
 </script>
 <script src="/common.js"></script>
@@ -227,18 +550,28 @@ function generateHtml(locName, locKey, dongs) {
 </html>`;
 }
 
-// 🌟 전체 폴더 순회 및 파일 일괄 생성/업데이트
-let totalCreated = 0;
-for (const [regionCategory, list] of Object.entries(regionData)) {
-  list.forEach(item => {
-    const dirPath = path.join(__dirname, item.k);
-    if (!fs.existsSync(dirPath)) {
-      fs.mkdirSync(dirPath, { recursive: true });
+// 🌟 전체 구 + 동 폴더 및 index.html 일괄 빌드
+let guCount = 0;
+let dongCount = 0;
+
+for (const [regionCategory, guList] of Object.entries(regionData)) {
+  guList.forEach(gu => {
+    // 1. 구(Gu) 단위 폴더 및 index.html 생성
+    const guDir = path.join(__dirname, gu.k);
+    if (!fs.existsSync(guDir)) fs.mkdirSync(guDir, { recursive: true });
+    fs.writeFileSync(path.join(guDir, 'index.html'), generateHtml(gu.n, gu.k, null, false), 'utf-8');
+    guCount++;
+
+    // 2. 동(Dong) 단위 폴더 및 index.html 생성
+    if (gu.dongs && gu.dongs.length > 0) {
+      gu.dongs.forEach(dong => {
+        const dongDir = path.join(__dirname, dong.k);
+        if (!fs.existsSync(dongDir)) fs.mkdirSync(dongDir, { recursive: true });
+        fs.writeFileSync(path.join(dongDir, 'index.html'), generateHtml(`${gu.n} ${dong.n}`, dong.k, gu.k, true), 'utf-8');
+        dongCount++;
+      });
     }
-    const filePath = path.join(dirPath, 'index.html');
-    fs.writeFileSync(filePath, generateHtml(item.n, item.k, item.dongs), 'utf-8');
-    totalCreated++;
   });
 }
 
-console.log(`🎉 성공: 총 ${totalCreated}개의 구/동 지역 페이지가 1초 만에 자동 생성 및 업데이트되었습니다!`);
+console.log(`🎉 성공! [시/구: ${guCount}개] + [세부 동: ${dongCount}개] 총 ${guCount + dongCount}개 독립 페이지가 자동 빌드되었습니다!`);
