@@ -131,7 +131,7 @@ const regionData = {
       n: "성동구", k: "seoul-seongdong",
       dongs: [
         { n: "성수동", k: "seoul-seongdong-seongsu" }, { n: "왕십리동", k: "seoul-seongdong-wangsimni" },
-        { n: "행당동", k: "seoul-seongdong-haengdang" }, { n: "금호동", k: "seoul-seongdong-geumho" },
+        { n: "행당동", k: "seoul-dongdaemun-haengdang" }, { n: "금호동", k: "seoul-seongdong-geumho" },
         { n: "옥수동", k: "seoul-seongdong-oksu" }, { n: "마장동", k: "seoul-seongdong-majang" }
       ]
     },
@@ -427,7 +427,19 @@ const shopsData = [
 ];
 
 // ==========================================================================
-// 🌟 3. 하단 지역 탭 전환
+// 🌟 3. 배열 무작위 셔플 함수
+// ==========================================================================
+function shuffleArray(array) {
+  const cloned = [...array];
+  for (let i = cloned.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [cloned[i], cloned[j]] = [cloned[j], cloned[i]];
+  }
+  return cloned;
+}
+
+// ==========================================================================
+// 🌟 4. 하단 지역 탭 전환
 // ==========================================================================
 function switchRegion(reg, el) {
   const tabs = document.querySelectorAll('.bl-tab, .hcl-tab');
@@ -445,18 +457,30 @@ function switchRegion(reg, el) {
 }
 
 // ==========================================================================
-// 🌟 4. 페이지 로드 시 자동 렌더링
+// 🌟 5. 페이지 로드 시 렌더링 (천안 필터링 + 랜덤 노출)
 // ==========================================================================
 window.onload = function() {
   const isSub = (typeof currentLocLabel !== 'undefined' && currentLocLabel);
   const locLabel = isSub ? currentLocLabel : "수도권 전지역";
   const serviceKeyword = isSub ? "출장마사지 / 홈타이" : "방문 힐링케어";
 
-  // 1) 업체 카드 목록 렌더링
+  // 천안 지역 여부 판별 (라벨 또는 키에 '천안' / 'cheonan' 포함 시)
+  const isCheonan = (typeof currentLocKey !== 'undefined' && currentLocKey.startsWith('cheonan')) ||
+                    (typeof currentLocLabel !== 'undefined' && currentLocLabel.includes('천안'));
+
   const shopContainer = document.getElementById('shop-list-container');
   if (shopContainer && typeof shopsData !== 'undefined') {
     shopContainer.innerHTML = "";
-    shopsData.forEach(shop => {
+
+    // 🌟 천안 지역은 2번(한국미인테라피), 4번(주주테라피)만 노출 / 타 지역은 5개 전체 노출
+    let targetShops = isCheonan
+      ? shopsData.filter(shop => shop.id === 2 || shop.id === 4)
+      : shopsData;
+
+    // 무작위 순서 셔플
+    const randomizedShops = shuffleArray(targetShops);
+
+    randomizedShops.forEach(shop => {
       let coursesHtml = "";
       if (shop.courses) {
         shop.courses.forEach(c => {
@@ -487,7 +511,7 @@ window.onload = function() {
     });
   }
 
-  // 2) 구 페이지일 때 클릭 시 '개별 동 정적 페이지'로 넘어가는 링크 렌더링
+  // 구 페이지일 때 개별 동 링크 렌더링
   const dongBox = document.getElementById('dong-list-container');
   if (dongBox && typeof currentLocKey !== 'undefined') {
     let matchedDongs = [];
@@ -505,7 +529,7 @@ window.onload = function() {
     }
   }
 
-  // 3) 기본 서울 탭 활성화
+  // 기본 서울 탭 활성화
   const defaultTab = document.querySelector('.bl-tab, .hcl-tab');
   if (defaultTab) {
     switchRegion('seoul', defaultTab);
